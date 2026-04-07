@@ -1,0 +1,15 @@
+{
+  "framework": "nextjs",
+  "redirects": [
+    {
+      "source": "/terms-of-hosted-meetings-program",
+      "destination": "/terms-of-hosted-meetings",
+      "permanent": true
+    },
+    {
+      "source": "/exhibitor-rules-regulations",
+      "destination": "/exhibitor-rules",
+      "permanent": true
+    }
+  ]
+}
