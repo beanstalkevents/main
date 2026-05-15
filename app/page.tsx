@@ -1,5 +1,8 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Testimonials from "@/components/Testimonials";
+import AttendeesCarousel from "@/components/AttendeesCarousel";
+import Countdown from "@/components/Countdown";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,51 +10,6 @@ export const metadata: Metadata = {
   description:
     "The largest and most important retail event uniting the Disruptor Brands ecosystem. September 14–16, 2026 at Industry City, Brooklyn.",
 };
-
-const testimonials = [
-  {
-    name: "Sean Frank",
-    title: "CEO at Ridge",
-    quote:
-      "The best founders in America are here. I've met friends for life at this thing… the tips and practical stuff you take out of this is best in class.",
-    img: "https://images.squarespace-cdn.com/content/v1/66c4e557a4ad6b7723de12da/1dd91b30-e453-45dc-8d83-97d1a271aa60/4.jpg",
-  },
-  {
-    name: "Larry Fitzgerald Jr.",
-    title: "NFL All-Pro Wide Receiver & Investor",
-    quote:
-      "This is one of the premier conferences in the country… you're in the epicenter of commerce here in the country, in New York.",
-    img: "https://images.squarespace-cdn.com/content/v1/66c4e557a4ad6b7723de12da/8321852d-8819-41ad-9cb6-127666961b69/7.jpg",
-  },
-  {
-    name: "Harley Finkelstein",
-    title: "President at Shopify",
-    quote:
-      "Beanstalk is basically the mecca right now for merchants, builders, entrepreneurs, and Shopify app partners.",
-    img: "https://images.squarespace-cdn.com/content/v1/66c4e557a4ad6b7723de12da/7ad6e934-c441-43b6-93cc-d9c7ed679740/10.jpg",
-  },
-  {
-    name: "Bruce Smith",
-    title: "Founder at Hydrow",
-    quote:
-      "The best event of the year. Their team does an amazing job curating attendees to make sure that everyone attending brings real value to the table.",
-    img: "https://images.squarespace-cdn.com/content/v1/66c4e557a4ad6b7723de12da/4b24074c-cd3c-4474-8012-08ef13e4415c/6.jpg",
-  },
-  {
-    name: "Olivia Kory",
-    title: "Chief Strategy Officer at Haus",
-    quote:
-      "I haven't been this excited for a non-Haus hosted event in… ever. Not sure how they managed to get such an amazing list of brands and attendees.",
-    img: "https://images.squarespace-cdn.com/content/v1/66c4e557a4ad6b7723de12da/120763b9-7f08-4cfe-817e-dddeb7e0437b/8.jpg",
-  },
-  {
-    name: "Paul Yeh",
-    title: "Co-Founder & Partner at Conductive VC",
-    quote:
-      "What an amazing conference with super high quality attendees. I am going to RSVP for next year as soon as registration opens!",
-    img: "https://images.squarespace-cdn.com/content/v1/66c4e557a4ad6b7723de12da/9d5544e9-9a9e-4635-9e8a-018f55d25718/9.jpg",
-  },
-];
 
 const stats = [
   { value: "10,000+", label: "1:1 Executive Meetings" },
@@ -69,6 +27,82 @@ const whatToExpect = [
   { num: "06", icon: "🏙", title: "Industry City, Brooklyn", desc: "One of NYC's most iconic campuses—550 founder-led companies, waterfront views, world-class dining." },
 ];
 
+const trustedLogos = [
+  { src: "/logos/tiktok.png", alt: "TikTok" },
+  { src: "/logos/shopify.png", alt: "Shopify" },
+  { src: "/logos/nbcuniversal.png", alt: "NBCUniversal" },
+  { src: "/logos/sage.png", alt: "Sage" },
+  { src: "/logos/eko.png", alt: "eko" },
+  { src: "/logos/postscript.png", alt: "Postscript" },
+  { src: "/logos/northbeam.png", alt: "Northbeam" },
+  { src: "/logos/pixis.png", alt: "Pixis" },
+  { src: "/logos/aspire.png", alt: "Aspire" },
+  { src: "/logos/pattern.png", alt: "Pattern" },
+];
+
+function TrustedBy() {
+  const loop = [...trustedLogos, ...trustedLogos];
+  return (
+    <div
+      style={{
+        background: "#ffffff",
+        borderTop: "1px solid var(--beige)",
+        borderBottom: "1px solid var(--beige)",
+        height: "80px",
+        display: "flex",
+        alignItems: "center",
+        gap: "32px",
+        overflow: "hidden",
+        padding: "0 48px",
+      }}
+    >
+      <div
+        style={{
+          fontSize: "10px",
+          fontWeight: 600,
+          letterSpacing: "0.18em",
+          textTransform: "uppercase",
+          color: "var(--tan)",
+          whiteSpace: "nowrap",
+          flexShrink: 0,
+          paddingRight: "24px",
+          borderRight: "1px solid var(--beige)",
+        }}
+      >
+        Trusted by
+      </div>
+      <div
+        style={{
+          overflow: "hidden",
+          flex: 1,
+          maskImage: "linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)",
+        }}
+      >
+        <div className="ticker-track" style={{ display: "flex", alignItems: "center", gap: "56px", width: "max-content" }}>
+          {loop.map((l, i) => (
+            <div key={i} style={{ display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, height: "48px" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={l.src}
+                alt={l.alt}
+                style={{
+                  height: "38px",
+                  width: "auto",
+                  maxWidth: "150px",
+                  objectFit: "contain",
+                  display: "block",
+                  opacity: 0.8,
+                }}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const verticals = [
   "🥗 Food & Beverage", "🪒 Personal Care", "🐶 Pets", "👕 Apparel & Footwear",
   "📺 Electronics", "🏋🏻 Health & Wellness", "🪑 Home & Decor", "🧸 Toys & Games", "⚽️ Sports & Outdoors",
@@ -81,7 +115,18 @@ export default function HomePage() {
 
       {/* HERO */}
       <header id="hero" className="relative overflow-hidden" style={{ background: "#233c36", paddingTop: "120px", paddingBottom: 0 }}>
-        <div className="max-w-content mx-auto px-6 md:px-12 pb-16">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0, opacity: 0.35, pointerEvents: "none" }}
+        >
+          <source src="/video/hero-loop.mp4" type="video/mp4" />
+        </video>
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(35,60,54,0.55) 0%, rgba(35,60,54,0.82) 100%)", zIndex: 1, pointerEvents: "none" }} />
+        <div className="max-w-content mx-auto px-6 md:px-12 pb-16 relative" style={{ zIndex: 2 }}>
           <div className="inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1 mb-6" style={{ background: "#cdf765", color: "#233c36", letterSpacing: "0.14em" }}>
             September 14–16, 2026 · Industry City, Brooklyn
           </div>
@@ -100,7 +145,7 @@ export default function HomePage() {
             🎟️ Request an Invite
           </a>
         </div>
-        <div className="grid border-t" style={{ gridTemplateColumns: "repeat(4, 1fr)", borderColor: "rgba(255,255,255,0.08)" }}>
+        <div className="grid border-t relative" style={{ gridTemplateColumns: "repeat(4, 1fr)", borderColor: "rgba(255,255,255,0.08)", zIndex: 2 }}>
           {stats.map((s, i) => (
             <div key={i} className="px-8 py-7 flex flex-col gap-1" style={{ borderRight: i < stats.length - 1 ? "1px solid rgba(255,255,255,0.08)" : "none" }}>
               <strong style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "28px", color: "#cdf765", lineHeight: 1 }}>{s.value}</strong>
@@ -110,32 +155,11 @@ export default function HomePage() {
         </div>
       </header>
 
+      {/* TRUSTED BY */}
+      <TrustedBy />
+
       {/* TESTIMONIALS */}
-      <section id="testimonials" style={{ background: "#141414" }}>
-        <div className="max-w-content mx-auto px-6 md:px-12 py-16">
-          <div className="section-label dark">Social proof</div>
-          <h2 className="mb-12" style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(28px, 4vw, 42px)", color: "#fcf9ec" }}>
-            What people are saying
-          </h2>
-          <div className="grid gap-4" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))" }}>
-            {testimonials.map((t, i) => (
-              <div key={i} className="flex flex-col gap-4 p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                <div className="flex items-center gap-3">
-                  <div className="rounded-full overflow-hidden flex-shrink-0" style={{ width: 44, height: 44, background: "#315c52" }}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={t.img} alt={t.name} className="w-full h-full object-cover" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-sm" style={{ color: "#fcf9ec", fontFamily: "NewSpirit, serif" }}>{t.name}</div>
-                    <div className="text-xs" style={{ color: "#ba9e6e" }}>{t.title}</div>
-                  </div>
-                </div>
-                <p className="text-sm leading-relaxed" style={{ color: "#c7dccd" }}>&ldquo;{t.quote}&rdquo;</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Testimonials />
 
       {/* WHAT IS BEANSTALK */}
       <section id="about" style={{ background: "#fcf9ec" }}>
@@ -188,51 +212,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CALLOUT BAR */}
-      <div className="py-8 px-6 md:px-12" style={{ background: "#cdf765" }}>
-        <div className="max-w-content mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <p style={{ fontFamily: "NewSpirit, Georgia, serif", color: "#233c36", fontSize: "clamp(18px, 2.5vw, 26px)" }}>
-            And just to remind you again — it&apos;s the leaders who come out to Beanstalk.
-          </p>
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScP-JFqLpDlqk5cnVsZ0s1RzJXu7oe6Jwmlb8WSI2JtjwaytA/viewform"
-            target="_blank" rel="noopener noreferrer"
-            className="flex-shrink-0 text-xs font-semibold tracking-wider uppercase px-5 py-3"
-            style={{ background: "#233c36", color: "#cdf765", letterSpacing: "0.08em" }}
-          >
-            Request an Invite →
-          </a>
-        </div>
-      </div>
-
-      {/* AGENDA */}
-      <section id="agenda" style={{ background: "#fcf9ec" }}>
-        <div className="max-w-content mx-auto px-6 md:px-12 py-20">
-          <div className="section-label">Schedule</div>
-          <h2 className="mb-4" style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(28px, 4vw, 44px)", color: "#233c36" }}>Agenda</h2>
-          <p className="text-base mb-8" style={{ color: "#4a4a4a" }}>September 14–16, 2026 · Industry City, Brooklyn</p>
-          <div className="grid grid-cols-3 gap-px" style={{ border: "1px solid var(--beige)" }}>
-            {["Sunday, Sept 14", "Monday, Sept 15", "Tuesday, Sept 16"].map((day) => (
-              <div key={day} className="p-6 flex flex-col gap-3" style={{ background: "#fcf9ec" }}>
-                <div className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#ba9e6e" }}>{day}</div>
-                <p className="text-sm" style={{ color: "#4a4a4a" }}>Full agenda coming soon.</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* COUNTDOWN */}
+      <Countdown />
 
       {/* ATTENDEES */}
-      <section id="attendees" style={{ background: "#233c36" }}>
-        <div className="max-w-content mx-auto px-6 md:px-12 py-20">
-          <div className="section-label dark">Past attendees</div>
-          <h2 className="mb-4" style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(28px, 4vw, 44px)", color: "#fcf9ec" }}>Who&apos;s Coming</h2>
-          <p className="text-base mb-10" style={{ color: "#c7dccd" }}>1,000+ founders and senior executives from the world&apos;s most innovative consumer brands.</p>
-          <div className="flex items-center justify-center py-16" style={{ border: "1px solid rgba(255,255,255,0.08)", color: "rgba(199,220,205,0.3)", fontSize: "13px" }}>
-            Attendee grid — populated from master data set
-          </div>
-        </div>
-      </section>
+      <AttendeesCarousel />
 
       {/* SPEAK */}
       <section id="speak" style={{ background: "#fcf9ec" }}>

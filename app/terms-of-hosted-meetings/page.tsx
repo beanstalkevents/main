@@ -55,7 +55,7 @@ function MeetingTable({ block, count, rows }: {
 
 export default function TermsHostedMeetingsPage() {
   return (
-    <LegalPage title="Terms and Conditions for Hosted Meetings Program" lastUpdated="July 17, 2025">
+    <LegalPage title="Terms and Conditions for Hosted Meetings Program" lastUpdated="July 17, 2026">
       <P>These terms and conditions (<strong>&ldquo;Terms &amp; Conditions&rdquo;</strong>) apply to those individuals (<strong>&ldquo;Hosted Meetings Participant&rdquo;</strong>, <strong>&ldquo;you&rdquo;</strong>, or <strong>&ldquo;your&rdquo;</strong>) participating in Hosted Meetings (<strong>&ldquo;Hosted Meetings&rdquo;</strong>) on behalf of sponsors as part of Beanstalk Events Inc.&rsquo;s (<strong>&ldquo;Beanstalk&rdquo;</strong>, <strong>&ldquo;we&rdquo;</strong>, <strong>&ldquo;us&rdquo;</strong>, or <strong>&ldquo;our&rdquo;</strong>) Meetings Program (<strong>&ldquo;Meetings Program&rdquo;</strong>) scheduled to be held during Beanstalk on September 14 to 16, 2026 in Brooklyn (the <strong>&ldquo;Event&rdquo;</strong>).</P>
       <P>These Terms &amp; Conditions may be modified from time to time, so check back often. So that you are aware changes have been made, we will adjust the &ldquo;Last revised&rdquo; date at the beginning of this document. Continued participation in the Event by you will constitute your acceptance of any changes or revisions to these Terms &amp; Conditions.</P>
 
@@ -110,7 +110,7 @@ export default function TermsHostedMeetingsPage() {
           { num: 4, start: "3:20pm", brk: "3:32pm – 3:35pm (3 min)", end: "3:32pm" },
           { num: 5, start: "3:35pm", brk: "3:47pm – 3:50pm (3 min)", end: "3:47pm" },
           { num: 6, start: "3:50pm", brk: "4:02pm – 4:05pm (3 min)", end: "4:02pm" },
-          { num: 7, start: "4:05pm", brk: "—", end: "4:17pm" },
+          { num: 7, start: "4:05pm", brk: "4:17pm – 4:20pm (3 min)", end: "4:17pm" },
         ]}
       />
 
@@ -122,7 +122,7 @@ export default function TermsHostedMeetingsPage() {
           { num: 2, start: "10:30am", brk: "10:42am – 10:45am (3 min)", end: "10:42am" },
           { num: 3, start: "10:45am", brk: "10:57am – 11:00am (3 min)", end: "10:57am" },
           { num: 4, start: "11:00am", brk: "11:12am – 11:15am (3 min)", end: "11:12am" },
-          { num: 5, start: "11:15am", brk: "—", end: "11:27am" },
+          { num: 5, start: "11:15am", brk: "11:27am – 11:30am (3 min)", end: "11:27am" },
         ]}
       />
     </LegalPage>

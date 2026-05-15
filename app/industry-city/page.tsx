@@ -8,202 +8,470 @@ export const metadata: Metadata = {
     "Beanstalk 2026 takes place at Industry City in Brooklyn, NY — September 14–16, 2026.",
 };
 
-const dining = [
-  { name: "Japan Village", desc: "A Japanese market with six food stalls, an izakaya, a sake store, a specialty grocery, and more." },
-  { name: "Hometown Bar-B-Que", desc: "A rustic BBQ spot featuring slow smoked meats, craft beer & live music on weekends." },
-  { name: "Waku Waku", desc: "Traditional Japanese izakaya serving Teishoku lunch sets and full dinner service featuring yakitori and chuhai cocktails." },
-  { name: "Frying Pan", desc: "An American eatery with an indoor bar, an outdoor courtyard, and a Game Room." },
-];
+const EYEBROW: React.CSSProperties = {
+  fontFamily: "Afacad, sans-serif",
+  fontSize: "10px",
+  letterSpacing: "0.42em",
+  textTransform: "uppercase",
+  fontWeight: 600,
+};
 
-const activities = [
-  { emoji: "🏰", title: "Rock Climbing", desc: "Scale the castle walls" },
-  { emoji: "🏹", title: "Archery", desc: "Join the Queensguard" },
-  { emoji: "⚫️", title: "Pétanque", desc: "Royal lawn games" },
-  { emoji: "🎳", title: "Bowling", desc: "Peasantry fun" },
-  { emoji: "🍻", title: "Brewery & Distilleries", desc: "Drink mead with new friends" },
-];
+const BIG_HEADLINE: React.CSSProperties = {
+  fontFamily: "NewSpirit, Georgia, serif",
+  fontSize: "clamp(3.5rem, 9.5vw, 8.5rem)",
+  fontWeight: 700,
+  lineHeight: 0.92,
+  letterSpacing: "-0.03em",
+  textTransform: "uppercase",
+  margin: 0,
+};
+
+const ITALIC_EM: React.CSSProperties = {
+  fontFamily: "Afacad, sans-serif",
+  fontStyle: "italic",
+  fontWeight: 400,
+  textTransform: "lowercase",
+  letterSpacing: "0.01em",
+  display: "block",
+  marginTop: "0.3em",
+  fontSize: "0.42em",
+};
+
+const CHAPTER_NUM: React.CSSProperties = {
+  ...EYEBROW,
+  marginBottom: "1.25rem",
+};
+
+const CHAPTER_TITLE: React.CSSProperties = {
+  fontFamily: "NewSpirit, Georgia, serif",
+  fontSize: "clamp(2.5rem, 6.5vw, 5rem)",
+  fontWeight: 700,
+  lineHeight: 0.96,
+  letterSpacing: "-0.025em",
+  textTransform: "uppercase",
+  margin: 0,
+};
+
+const CHAPTER_SUB: React.CSSProperties = {
+  fontFamily: "Afacad, sans-serif",
+  fontStyle: "italic",
+  fontWeight: 400,
+  fontSize: "clamp(1.05rem, 1.6vw, 1.35rem)",
+  lineHeight: 1.55,
+  marginTop: "1.5rem",
+  maxWidth: "620px",
+};
+
+const BODY_P: React.CSSProperties = {
+  fontFamily: "Afacad, sans-serif",
+  fontSize: "1.05rem",
+  lineHeight: 1.7,
+  margin: 0,
+};
+
+const HAIR_RULE = (color = "rgba(35,60,54,0.16)"): React.CSSProperties => ({
+  width: "60px",
+  height: "1px",
+  background: color,
+});
 
 export default function IndustryCityPage() {
   return (
-    <div style={{ background: "var(--cream)" }}>
+    <div style={{ background: "var(--cream)", color: "#233c36" }}>
       <Nav />
 
-      {/* HERO */}
-      <header className="relative overflow-hidden" style={{ background: "#233c36", paddingTop: "120px" }}>
-        <div className="max-w-content mx-auto px-6 md:px-12 pb-16">
-          <nav className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest mb-8" style={{ color: "#c7dccd", letterSpacing: "0.1em" }}>
-            <a href="/" style={{ color: "#c7dccd" }}>Beanstalk</a>
-            <span style={{ color: "#3d6358" }}>›</span>
-            <span style={{ color: "#dfd5bc" }}>Location</span>
-          </nav>
-          <div className="inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1 mb-6" style={{ background: "#cdf765", color: "#233c36", letterSpacing: "0.14em" }}>
-            Brooklyn, New York
+      {/* HERO — split screen ink/cream */}
+      <section
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr",
+          minHeight: "100vh",
+          paddingTop: "0",
+        }}
+        className="ic-hero"
+      >
+        {/* LEFT PANEL (dark) */}
+        <div
+          style={{
+            background: "#233c36",
+            color: "#fcf9ec",
+            padding: "9rem 3rem 4rem",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            minHeight: "70vh",
+          }}
+        >
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+            <span style={{ ...EYEBROW, color: "#cdf765", opacity: 0.75 }}>Chapter №2</span>
+            <span style={{ fontFamily: "Afacad, sans-serif", fontStyle: "italic", fontSize: "0.95rem", color: "rgba(252,249,236,0.55)" }}>
+              September 14–16, 2026
+            </span>
           </div>
-          <h1 className="mb-5" style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(44px, 6vw, 80px)", color: "#fcf9ec", lineHeight: 1.0, maxWidth: "720px" }}>
-            Industry City
-          </h1>
-          <p className="text-lg leading-relaxed" style={{ color: "#c7dccd", maxWidth: "560px" }}>
-            571 2nd Ave, Brooklyn NY 11232 — between 33rd and 34th Street. Courtyard 7/8 gates for main entrance and registration.
-          </p>
-        </div>
 
-        {/* Stats strip */}
-        <div className="grid border-t" style={{ gridTemplateColumns: "repeat(3, 1fr)", borderColor: "rgba(255,255,255,0.08)" }}>
-          {[
-            { value: "550+", label: "Founder-led companies on campus" },
-            { value: "$450M", label: "Campus redevelopment" },
-            { value: "1910s", label: "Original founding era" },
-          ].map((s, i) => (
-            <div key={i} className="px-8 py-7 flex flex-col gap-1" style={{ borderRight: i < 2 ? "1px solid rgba(255,255,255,0.08)" : "none" }}>
-              <strong style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "28px", color: "#cdf765", lineHeight: 1 }}>{s.value}</strong>
-              <span className="text-xs font-semibold uppercase" style={{ color: "#4a7a6a", letterSpacing: "0.12em" }}>{s.label}</span>
+          <div style={{ marginTop: "auto", width: "100%" }}>
+            <h1 style={{ ...BIG_HEADLINE, color: "#fcf9ec" }}>
+              Industry
+              <em style={{ ...ITALIC_EM, color: "#cdf765" }}>city</em>
+            </h1>
+            <div style={{ width: "80px", height: "1px", background: "rgba(252,249,236,0.35)", margin: "2.5rem 0 1.75rem" }} />
+            <p
+              style={{
+                fontFamily: "Afacad, sans-serif",
+                fontStyle: "italic",
+                fontSize: "1.2rem",
+                lineHeight: 1.55,
+                maxWidth: "420px",
+                color: "rgba(252,249,236,0.78)",
+              }}
+            >
+              Brooklyn&rsquo;s original entrepreneurial campus &mdash; six million square feet of brick, glass, and waterfront.
+            </p>
+            <div
+              style={{
+                marginTop: "2.5rem",
+                paddingTop: "1.5rem",
+                borderTop: "1px solid rgba(252,249,236,0.12)",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "baseline",
+                gap: "1rem",
+                flexWrap: "wrap",
+              }}
+            >
+              <span style={{ ...EYEBROW, color: "rgba(252,249,236,0.55)" }}>571 2nd Ave · Brooklyn NY</span>
+              <span style={{ fontFamily: "Afacad, sans-serif", fontStyle: "italic", fontSize: "0.95rem", color: "rgba(252,249,236,0.55)" }}>
+                Courtyard 7/8 gates
+              </span>
             </div>
-          ))}
+          </div>
         </div>
-      </header>
 
-      {/* MAP / ADDRESS */}
-      <section style={{ background: "#fcf9ec" }}>
-        <div className="max-w-content mx-auto px-6 md:px-12 py-16">
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div>
-              <div className="section-label">Getting there</div>
-              <h2 className="mb-4" style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(24px, 3vw, 36px)", color: "#233c36" }}>
-                Venue Address
-              </h2>
-              <div className="flex flex-col gap-2 mb-6 text-base" style={{ color: "#4a4a4a" }}>
-                <p><strong style={{ color: "#233c36" }}>Venue:</strong> Industry City</p>
-                <p><strong style={{ color: "#233c36" }}>Address:</strong> 571 2nd Avenue, Brooklyn NY 11232</p>
-                <p><strong style={{ color: "#233c36" }}>Entrance:</strong> Courtyard 7/8 gates on 2nd Ave between 33rd and 34th Street</p>
-              </div>
+        {/* RIGHT PANEL (cream) */}
+        <div
+          style={{
+            background: "#fcf9ec",
+            color: "#233c36",
+            padding: "9rem 3rem 4rem",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            borderLeft: "1px solid var(--beige)",
+            minHeight: "70vh",
+          }}
+        >
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+            <span style={{ ...EYEBROW, color: "var(--tan)" }}>The Venue</span>
+            <span style={{ fontFamily: "Afacad, sans-serif", fontStyle: "italic", fontSize: "0.95rem", color: "rgba(35,60,54,0.55)" }}>
+              Brooklyn, NY
+            </span>
+          </div>
+
+          <div style={{ marginTop: "auto" }}>
+            <h2 style={{ ...BIG_HEADLINE, fontSize: "clamp(2.5rem, 7vw, 6rem)", color: "#233c36" }}>
+              A campus
+              <em style={{ ...ITALIC_EM, color: "var(--tan)" }}>of its own</em>
+            </h2>
+            <div style={{ width: "80px", height: "1px", background: "var(--beige)", margin: "2.5rem 0 1.75rem" }} />
+            <p
+              style={{
+                fontFamily: "Afacad, sans-serif",
+                fontStyle: "italic",
+                fontSize: "1.2rem",
+                lineHeight: 1.55,
+                maxWidth: "440px",
+                color: "rgba(35,60,54,0.75)",
+              }}
+            >
+              Founded in the early 20th century, redeveloped for $450M, and now home to 550 founder-led companies on the Brooklyn waterfront.
+            </p>
+            <div
+              style={{
+                marginTop: "2.5rem",
+                paddingTop: "1.5rem",
+                borderTop: "1px solid var(--beige)",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "baseline",
+              }}
+            >
               <a
                 href="https://maps.app.goo.gl/oUYZxaHBgV3YGUmG7"
-                target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase px-5 py-3"
-                style={{ background: "#233c36", color: "#cdf765", letterSpacing: "0.08em" }}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  ...EYEBROW,
+                  color: "#233c36",
+                  borderBottom: "1px solid rgba(35,60,54,0.3)",
+                  paddingBottom: "2px",
+                }}
               >
                 Open in Maps →
               </a>
-            </div>
-            <div>
-              <div className="section-label">History</div>
-              <h2 className="mb-4" style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(24px, 3vw, 36px)", color: "#233c36" }}>
-                An Entrepreneurial Legacy
-              </h2>
-              <p className="text-base leading-relaxed mb-3" style={{ color: "#4a4a4a" }}>
-                Industry City was founded by iconic American entrepreneur <strong>Irving T. Bush</strong> in the early 20th century, known at the time as Bush Terminal—the first facility of its kind in NYC, employing more than 25,000 people.
-              </p>
-              <p className="text-base leading-relaxed" style={{ color: "#4a4a4a" }}>
-                One of the original entrepreneurial hubs in the US, it offered economies of scale that gave even the smallest companies access to facilities normally reserved for large, well-capitalized firms.
-              </p>
+              <span style={{ fontFamily: "Afacad, sans-serif", fontStyle: "italic", fontSize: "0.95rem", color: "rgba(35,60,54,0.55)" }}>
+                33rd – 34th St
+              </span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* INDUSTRY CITY TODAY */}
-      <section style={{ background: "#233c36" }}>
-        <div className="max-w-content mx-auto px-6 md:px-12 py-16">
-          <div className="section-label dark">The campus today</div>
-          <h2 className="mb-6" style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(26px, 3.5vw, 40px)", color: "#fcf9ec" }}>
-            Industry City Today
+      {/* CHAPTER 01 — ADDRESS */}
+      <section
+        style={{
+          background: "#efe7d3",
+          padding: "8rem 2rem",
+          borderBottom: "1px solid rgba(35,60,54,0.08)",
+        }}
+      >
+        <div style={{ maxWidth: "780px", margin: "0 auto" }}>
+          <div style={{ ...CHAPTER_NUM, color: "var(--tan)" }}>01 — The Address</div>
+          <h2 style={CHAPTER_TITLE}>
+            Where to find
+            <em
+              style={{
+                fontFamily: "Afacad, sans-serif",
+                fontStyle: "italic",
+                fontWeight: 400,
+                textTransform: "none",
+                letterSpacing: "0",
+                color: "var(--tan)",
+                fontSize: "1.04em",
+                display: "block",
+                marginTop: "0.2em",
+              }}
+            >
+              Beanstalk
+            </em>
           </h2>
-          <p className="text-base leading-relaxed mb-4" style={{ color: "#c7dccd", maxWidth: "720px" }}>
-            A $450 million redevelopment modernized the campus to support the modern innovation economy. Today it&apos;s home to 550 founder-led companies buzzing with creatives across industries who build their businesses together on campus.
+          <p style={{ ...CHAPTER_SUB, color: "rgba(35,60,54,0.78)" }}>
+            Take the R train to 36th St, the F or D to 9th Ave, or walk in from the waterfront. Either way, look for the Courtyard 7/8 gates &mdash; that&rsquo;s where everything begins.
           </p>
-          <p className="text-base leading-relaxed" style={{ color: "#c7dccd", maxWidth: "720px" }}>
-            During Beanstalk you&apos;ll have opportunities to scale castle walls, become an expert archer, play pétanque, go bowling with new friends, and enjoy a selection of beers and spirits across five distilleries and beer halls within the city walls.
+
+          <div style={{ ...HAIR_RULE(), margin: "4rem 0 2.5rem" }} />
+
+          <dl style={{ display: "grid", gridTemplateColumns: "minmax(140px, 180px) 1fr", gap: "1.75rem 2.5rem", margin: 0 }}>
+            <dt style={{ ...EYEBROW, color: "var(--tan)", paddingTop: "6px" }}>Venue</dt>
+            <dd style={{ ...BODY_P, margin: 0 }}>Industry City &mdash; the venue for September 14&ndash;16, 2026.</dd>
+
+            <dt style={{ ...EYEBROW, color: "var(--tan)", paddingTop: "6px" }}>Address</dt>
+            <dd style={{ ...BODY_P, margin: 0 }}>
+              571 2nd Avenue, Brooklyn NY 11232
+              <span style={{ display: "block", marginTop: "4px", fontStyle: "italic", color: "rgba(35,60,54,0.6)" }}>
+                <a href="https://maps.app.goo.gl/oUYZxaHBgV3YGUmG7" target="_blank" rel="noopener noreferrer" style={{ color: "#233c36", borderBottom: "1px solid rgba(35,60,54,0.4)" }}>
+                  Open in Maps
+                </a>
+              </span>
+            </dd>
+
+            <dt style={{ ...EYEBROW, color: "var(--tan)", paddingTop: "6px" }}>Entrance</dt>
+            <dd style={{ ...BODY_P, margin: 0 }}>
+              2nd Avenue, between 34th and 33rd Street. The Courtyard 7/8 gates &mdash; registration and the main entrance.
+            </dd>
+          </dl>
+        </div>
+      </section>
+
+      {/* CHAPTER 02 — HISTORY */}
+      <section style={{ background: "#233c36", color: "#fcf9ec", borderBottom: "1px solid rgba(252,249,236,0.08)" }}>
+        {/* Full-bleed historic image */}
+        <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 9", overflow: "hidden", background: "#1a2e29" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/industry-city/historic.jpg"
+            alt="Bush Terminal — A Great Industrial City Within A City"
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: "contrast(1.05)" }}
+          />
+        </div>
+        <div style={{ padding: "1.25rem 2rem 0", borderBottom: "1px solid rgba(252,249,236,0.08)" }}>
+          <p
+            style={{
+              fontFamily: "Afacad, sans-serif",
+              fontStyle: "italic",
+              fontSize: "0.85rem",
+              color: "rgba(252,249,236,0.55)",
+              maxWidth: "780px",
+              margin: "0 auto",
+              paddingBottom: "1.25rem",
+              letterSpacing: "0.02em",
+            }}
+          >
+            Bush Terminal, c. 1920s &mdash; &ldquo;A Great Industrial City Within A City. Over 6 Million Sq. Ft. of Industrial Floor Space.&rdquo;
+          </p>
+        </div>
+
+        <div style={{ padding: "8rem 2rem", maxWidth: "780px", margin: "0 auto" }}>
+          <div style={{ ...CHAPTER_NUM, color: "#cdf765" }}>02 — The History</div>
+          <h2 style={CHAPTER_TITLE}>
+            A great industrial
+            <em
+              style={{
+                fontFamily: "Afacad, sans-serif",
+                fontStyle: "italic",
+                fontWeight: 400,
+                textTransform: "none",
+                letterSpacing: "0",
+                color: "#cdf765",
+                fontSize: "1.04em",
+                display: "block",
+                marginTop: "0.2em",
+              }}
+            >
+              city within a city
+            </em>
+          </h2>
+          <p style={{ ...CHAPTER_SUB, color: "rgba(252,249,236,0.7)" }}>
+            Founded by iconic American entrepreneur <em>Irving T. Bush</em> in the early 20th century, then known as Bush Terminal &mdash; the first facility of its kind in New York, employing more than 25,000 people.
+          </p>
+
+          <div style={{ ...HAIR_RULE("rgba(252,249,236,0.18)"), margin: "4rem 0 2.5rem" }} />
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", color: "rgba(252,249,236,0.86)" }}>
+            <p style={BODY_P}>
+              Bush Terminal was one of the <strong style={{ color: "#cdf765", fontWeight: 600 }}>original entrepreneurial hubs</strong> in the United States. It offered economies of scale for its tenants &mdash; savings on inbound and outbound rail shipments, insurance rates, labor, and rent &mdash; so that even the smallest companies could access facilities normally reserved for large, well-capitalized firms.
+            </p>
+            <p style={BODY_P}>
+              Founders in the 1910&rsquo;s could access private railroad tracks, a &ldquo;free waterfront,&rdquo; and &ldquo;a million-dollar factory at your present rental or less,&rdquo; with flexibility to rent as little as 5,000 square feet of space.
+            </p>
+          </div>
+        </div>
+
+        {/* PULL QUOTE */}
+        <div
+          style={{
+            borderTop: "1px solid rgba(252,249,236,0.12)",
+            padding: "6rem 2rem",
+            textAlign: "center",
+            background: "rgba(0,0,0,0.15)",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "NewSpirit, Georgia, serif",
+              fontSize: "clamp(1.8rem, 4vw, 3rem)",
+              lineHeight: 1.2,
+              color: "#fcf9ec",
+              maxWidth: "920px",
+              margin: "0 auto",
+              fontWeight: 700,
+              letterSpacing: "-0.01em",
+            }}
+          >
+            In today&rsquo;s dollars, companies were able to save{" "}
+            <span style={{ color: "#cdf765" }}>$100,000&ndash;$400,000 annually</span>{" "}
+            by locating in Industry City.
           </p>
         </div>
       </section>
 
-      {/* DINING */}
-      <section style={{ background: "#fcf9ec" }}>
-        <div className="max-w-content mx-auto px-6 md:px-12 py-16">
-          <div className="section-label">On campus</div>
-          <h2 className="mb-10" style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(26px, 3.5vw, 40px)", color: "#233c36" }}>
-            Dining Options
-          </h2>
-          <div className="grid md:grid-cols-2 gap-px" style={{ border: "1px solid var(--beige)" }}>
-            {dining.map((d) => (
-              <div key={d.name} className="p-7 flex flex-col gap-2" style={{ background: "#fcf9ec" }}>
-                <h3 style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "20px", color: "#233c36" }}>{d.name}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#4a4a4a" }}>{d.desc}</p>
-              </div>
-            ))}
-          </div>
+      {/* CHAPTER 03 — TODAY */}
+      <section style={{ background: "#fcf9ec", borderBottom: "1px solid var(--beige)" }}>
+        <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 9", overflow: "hidden", background: "#1a2e29" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/industry-city/today.webp"
+            alt="Industry City courtyard at sunset"
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+          />
         </div>
-      </section>
-
-      {/* ACTIVITIES */}
-      <section style={{ background: "#233c36" }}>
-        <div className="max-w-content mx-auto px-6 md:px-12 py-16">
-          <div className="section-label dark">Productive playtime</div>
-          <h2 className="mb-10" style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(26px, 3.5vw, 40px)", color: "#fcf9ec" }}>
-            Activities at Beanstalk
-          </h2>
-          <div className="grid gap-px" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", border: "1px solid rgba(255,255,255,0.08)" }}>
-            {activities.map((a) => (
-              <div key={a.title} className="p-7 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)" }}>
-                <span className="text-3xl">{a.emoji}</span>
-                <h3 style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "18px", color: "#fcf9ec" }}>{a.title}</h3>
-                <p className="text-sm" style={{ color: "#c7dccd" }}>{a.desc}</p>
-              </div>
-            ))}
-          </div>
+        <div style={{ padding: "1.25rem 2rem 0", borderBottom: "1px solid var(--beige)" }}>
+          <p
+            style={{
+              fontFamily: "Afacad, sans-serif",
+              fontStyle: "italic",
+              fontSize: "0.85rem",
+              color: "rgba(35,60,54,0.6)",
+              maxWidth: "780px",
+              margin: "0 auto",
+              paddingBottom: "1.25rem",
+            }}
+          >
+            The Industry City courtyards at dusk &mdash; six million square feet, reimagined for the modern innovation economy.
+          </p>
         </div>
-      </section>
 
-      {/* LOUNGE */}
-      <section style={{ background: "#fcf9ec" }}>
-        <div className="max-w-content mx-auto px-6 md:px-12 py-16 grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <div className="section-label">Exhibit</div>
-            <h2 className="mb-5" style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(26px, 3.5vw, 40px)", color: "#233c36" }}>
-              The Lounge Experience
-            </h2>
-            <p className="text-base leading-relaxed mb-4" style={{ color: "#4a4a4a" }}>
-              The original Box Factory floor will house a new production line, showcasing some of the most innovative technology and infrastructure companies in the retail industry.
+        <div style={{ padding: "8rem 2rem", maxWidth: "780px", margin: "0 auto" }}>
+          <div style={{ ...CHAPTER_NUM, color: "var(--tan)" }}>03 — Today</div>
+          <h2 style={CHAPTER_TITLE}>
+            Industry city
+            <em
+              style={{
+                fontFamily: "Afacad, sans-serif",
+                fontStyle: "italic",
+                fontWeight: 400,
+                textTransform: "none",
+                letterSpacing: "0",
+                color: "var(--tan)",
+                fontSize: "1.04em",
+                display: "block",
+                marginTop: "0.2em",
+              }}
+            >
+              today
+            </em>
+          </h2>
+          <p style={{ ...CHAPTER_SUB, color: "rgba(35,60,54,0.78)" }}>
+            Keeping to the entrepreneurial spirit of the property, a $450 million redevelopment modernized the campus to support the modern innovation economy and bring quality jobs back to the waterfront.
+          </p>
+
+          <div style={{ ...HAIR_RULE(), margin: "4rem 0 2.5rem" }} />
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", color: "rgba(35,60,54,0.85)" }}>
+            <p style={BODY_P}>
+              Today the campus is home to <strong style={{ color: "#233c36", fontWeight: 600 }}>550 founder-led companies</strong>, buzzing with creatives across industries who build their businesses together on campus.
             </p>
-            <p className="text-base leading-relaxed" style={{ color: "#4a4a4a" }}>
-              Each Lounge will be home to a unique series of Teardowns featuring the world&apos;s leading experts breaking down the inner workings of some of their greatest accomplishments. Lounges are also the primary gathering place for Table Talks—small groups of 5 to 6 individuals.
+            <p style={BODY_P}>
+              During your time at Beanstalk, you&rsquo;ll have opportunities to join the king&rsquo;s army and become an expert archer 🏹, learn the esoteric nuances of the hundred-year-old game of pétanque ⚫, wind down by going bowling with new friends 🎳, and enjoy an impeccable selection of beers and spirits across five <em>royal</em> distilleries 🥃 and beer halls 🍻 within the city walls.
             </p>
           </div>
-          <div className="flex flex-col gap-3">
+
+          {/* Stat row */}
+          <div
+            style={{
+              marginTop: "5rem",
+              paddingTop: "2rem",
+              borderTop: "1px solid var(--beige)",
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: "1rem",
+            }}
+          >
             {[
-              { label: "Teardown Sessions", desc: "Expert breakdowns of real accomplishments" },
-              { label: "Table Talks", desc: "Peer learning in groups of 5–6" },
-              { label: "Sponsor Lounges", desc: "Branded activations from leading vendors" },
-              { label: "Product Demos", desc: "Live demos from the innovators themselves" },
-            ].map((item) => (
-              <div key={item.label} className="flex items-start gap-4 p-5" style={{ background: "#fcf9ec", border: "1px solid var(--beige)" }}>
-                <span style={{ color: "#cdf765", background: "#233c36", padding: "4px 8px", fontSize: "11px", fontWeight: 600 }}>✓</span>
-                <div>
-                  <div className="font-semibold text-sm mb-0.5" style={{ color: "#233c36", fontFamily: "NewSpirit, serif" }}>{item.label}</div>
-                  <div className="text-xs" style={{ color: "#4a4a4a" }}>{item.desc}</div>
-                </div>
+              { v: "550+", l: "Founder-led companies" },
+              { v: "$450M", l: "Redevelopment" },
+              { v: "6M sq ft", l: "Industrial floor space" },
+            ].map((s, i) => (
+              <div key={i} style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                <strong style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(1.6rem, 3vw, 2.25rem)", color: "#233c36", lineHeight: 1 }}>{s.v}</strong>
+                <span style={{ ...EYEBROW, color: "var(--tan)" }}>{s.l}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <div className="py-8 px-6 md:px-12" style={{ background: "#cdf765" }}>
-        <div className="max-w-content mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <p style={{ fontFamily: "NewSpirit, Georgia, serif", color: "#233c36", fontSize: "clamp(18px, 2.5vw, 24px)" }}>
-            September 14–16, 2026 in Brooklyn.
+      {/* CLOSING CTA */}
+      <section style={{ background: "#cdf765" }}>
+        <div className="max-w-content mx-auto px-6 md:px-12" style={{ padding: "4rem 2rem", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "1.5rem" }}>
+          <span style={{ ...EYEBROW, color: "#233c36", opacity: 0.7 }}>RSVP</span>
+          <p style={{ fontFamily: "NewSpirit, Georgia, serif", color: "#233c36", fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)", lineHeight: 1.15, maxWidth: "640px" }}>
+            See you in Brooklyn &mdash; September 14&ndash;16, 2026.
           </p>
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLScP-JFqLpDlqk5cnVsZ0s1RzJXu7oe6Jwmlb8WSI2JtjwaytA/viewform"
             target="_blank" rel="noopener noreferrer"
-            className="flex-shrink-0 text-xs font-semibold tracking-wider uppercase px-5 py-3"
-            style={{ background: "#233c36", color: "#cdf765", letterSpacing: "0.08em" }}
+            style={{
+              ...EYEBROW,
+              background: "#233c36",
+              color: "#cdf765",
+              padding: "1rem 1.75rem",
+              letterSpacing: "0.25em",
+            }}
           >
-            Get Tickets →
+            Request an invite →
           </a>
         </div>
-      </div>
+      </section>
 
       <Footer />
     </div>
