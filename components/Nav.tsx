@@ -27,8 +27,8 @@ export default function Nav() {
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
         background: scrolled
-          ? "rgba(20, 20, 20, 0.96)"
-          : "rgba(35, 60, 54, 0.0)",
+          ? "rgba(35, 60, 54, 0.96)"
+          : "rgba(35, 60, 54, 0.92)",
         backdropFilter: scrolled ? "blur(12px)" : "none",
         borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "none",
       }}
@@ -104,7 +104,7 @@ export default function Nav() {
       {menuOpen && (
         <div
           className="md:hidden px-6 pb-6 flex flex-col gap-4"
-          style={{ background: "rgba(20,20,20,0.97)" }}
+          style={{ background: "rgba(35,60,54,0.97)" }}
         >
           {navLinks.map((link) => (
             <Link

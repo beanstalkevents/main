@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import ParallaxChapter from "@/components/ParallaxChapter";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,17 +13,17 @@ const EYEBROW: React.CSSProperties = {
   fontFamily: "Afacad, sans-serif",
   fontSize: "10px",
   letterSpacing: "0.42em",
-  textTransform: "uppercase",
+  textTransform: "none",
   fontWeight: 600,
 };
 
 const BIG_HEADLINE: React.CSSProperties = {
   fontFamily: "NewSpirit, Georgia, serif",
-  fontSize: "clamp(3.5rem, 9.5vw, 8.5rem)",
+  fontSize: "clamp(2.75rem, 7vw, 6rem)",
   fontWeight: 700,
-  lineHeight: 0.92,
-  letterSpacing: "-0.03em",
-  textTransform: "uppercase",
+  lineHeight: 1.0,
+  letterSpacing: "-0.015em",
+  textTransform: "none",
   margin: 0,
 };
 
@@ -30,7 +31,7 @@ const ITALIC_EM: React.CSSProperties = {
   fontFamily: "Afacad, sans-serif",
   fontStyle: "italic",
   fontWeight: 400,
-  textTransform: "lowercase",
+  textTransform: "none",
   letterSpacing: "0.01em",
   display: "block",
   marginTop: "0.3em",
@@ -44,11 +45,11 @@ const CHAPTER_NUM: React.CSSProperties = {
 
 const CHAPTER_TITLE: React.CSSProperties = {
   fontFamily: "NewSpirit, Georgia, serif",
-  fontSize: "clamp(2.5rem, 6.5vw, 5rem)",
+  fontSize: "clamp(1.8rem, 4vw, 3rem)",
   fontWeight: 700,
-  lineHeight: 0.96,
-  letterSpacing: "-0.025em",
-  textTransform: "uppercase",
+  lineHeight: 1.05,
+  letterSpacing: "-0.01em",
+  textTransform: "none",
   margin: 0,
 };
 
@@ -272,183 +273,114 @@ export default function IndustryCityPage() {
         </div>
       </section>
 
-      {/* CHAPTER 02 — HISTORY */}
-      <section style={{ background: "#233c36", color: "#fcf9ec", borderBottom: "1px solid rgba(252,249,236,0.08)" }}>
-        {/* Full-bleed historic image */}
-        <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 9", overflow: "hidden", background: "#1a2e29" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/industry-city/historic.jpg"
-            alt="Bush Terminal — A Great Industrial City Within A City"
-            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: "contrast(1.05)" }}
-          />
-        </div>
-        <div style={{ padding: "1.25rem 2rem 0", borderBottom: "1px solid rgba(252,249,236,0.08)" }}>
-          <p
+      {/* CHAPTER 02 — HISTORY (parallax over historic photo) */}
+      <ParallaxChapter src="/industry-city/historic.jpg" alt="Bush Terminal — A Great Industrial City Within A City" scrollHeight="320vh">
+        <div style={{ ...CHAPTER_NUM, color: "#cdf765" }}>02 — The History</div>
+        <h2 style={{ ...CHAPTER_TITLE, color: "#fcf9ec" }}>
+          A great industrial
+          <em
             style={{
               fontFamily: "Afacad, sans-serif",
               fontStyle: "italic",
-              fontSize: "0.85rem",
-              color: "rgba(252,249,236,0.55)",
-              maxWidth: "780px",
-              margin: "0 auto",
-              paddingBottom: "1.25rem",
-              letterSpacing: "0.02em",
+              fontWeight: 400,
+              textTransform: "none",
+              letterSpacing: "0",
+              color: "#cdf765",
+              fontSize: "1.04em",
+              display: "block",
+              marginTop: "0.2em",
             }}
           >
-            Bush Terminal, c. 1920s &mdash; &ldquo;A Great Industrial City Within A City. Over 6 Million Sq. Ft. of Industrial Floor Space.&rdquo;
+            city within a city
+          </em>
+        </h2>
+        <p style={{ ...CHAPTER_SUB, color: "rgba(252,249,236,0.78)" }}>
+          Founded by iconic American entrepreneur <em>Irving T. Bush</em> in the early 20th century, then known as Bush Terminal &mdash; the first facility of its kind in New York, employing more than 25,000 people.
+        </p>
+
+        <div style={{ ...HAIR_RULE("rgba(252,249,236,0.22)"), margin: "3rem 0 2rem" }} />
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", color: "rgba(252,249,236,0.9)", maxWidth: "720px" }}>
+          <p style={BODY_P}>
+            Bush Terminal was one of the <strong style={{ color: "#cdf765", fontWeight: 600 }}>original entrepreneurial hubs</strong> in the United States, offering economies of scale that let even the smallest companies access facilities normally reserved for large, well-capitalized firms.
           </p>
-        </div>
-
-        <div style={{ padding: "8rem 2rem", maxWidth: "780px", margin: "0 auto" }}>
-          <div style={{ ...CHAPTER_NUM, color: "#cdf765" }}>02 — The History</div>
-          <h2 style={CHAPTER_TITLE}>
-            A great industrial
-            <em
-              style={{
-                fontFamily: "Afacad, sans-serif",
-                fontStyle: "italic",
-                fontWeight: 400,
-                textTransform: "none",
-                letterSpacing: "0",
-                color: "#cdf765",
-                fontSize: "1.04em",
-                display: "block",
-                marginTop: "0.2em",
-              }}
-            >
-              city within a city
-            </em>
-          </h2>
-          <p style={{ ...CHAPTER_SUB, color: "rgba(252,249,236,0.7)" }}>
-            Founded by iconic American entrepreneur <em>Irving T. Bush</em> in the early 20th century, then known as Bush Terminal &mdash; the first facility of its kind in New York, employing more than 25,000 people.
-          </p>
-
-          <div style={{ ...HAIR_RULE("rgba(252,249,236,0.18)"), margin: "4rem 0 2.5rem" }} />
-
-          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", color: "rgba(252,249,236,0.86)" }}>
-            <p style={BODY_P}>
-              Bush Terminal was one of the <strong style={{ color: "#cdf765", fontWeight: 600 }}>original entrepreneurial hubs</strong> in the United States. It offered economies of scale for its tenants &mdash; savings on inbound and outbound rail shipments, insurance rates, labor, and rent &mdash; so that even the smallest companies could access facilities normally reserved for large, well-capitalized firms.
-            </p>
-            <p style={BODY_P}>
-              Founders in the 1910&rsquo;s could access private railroad tracks, a &ldquo;free waterfront,&rdquo; and &ldquo;a million-dollar factory at your present rental or less,&rdquo; with flexibility to rent as little as 5,000 square feet of space.
-            </p>
-          </div>
-        </div>
-
-        {/* PULL QUOTE */}
-        <div
-          style={{
-            borderTop: "1px solid rgba(252,249,236,0.12)",
-            padding: "6rem 2rem",
-            textAlign: "center",
-            background: "rgba(0,0,0,0.15)",
-          }}
-        >
           <p
             style={{
-              fontFamily: "NewSpirit, Georgia, serif",
-              fontSize: "clamp(1.8rem, 4vw, 3rem)",
-              lineHeight: 1.2,
-              color: "#fcf9ec",
-              maxWidth: "920px",
-              margin: "0 auto",
-              fontWeight: 700,
-              letterSpacing: "-0.01em",
+              fontFamily: "Afacad, sans-serif",
+              fontSize: "clamp(1.1rem, 1.8vw, 1.35rem)",
+              lineHeight: 1.55,
+              color: "rgba(252,249,236,0.95)",
+              fontWeight: 400,
+              letterSpacing: 0,
+              margin: "1.25rem 0 0",
             }}
           >
             In today&rsquo;s dollars, companies were able to save{" "}
-            <span style={{ color: "#cdf765" }}>$100,000&ndash;$400,000 annually</span>{" "}
+            <span style={{ color: "#cdf765", fontWeight: 500 }}>$100,000&ndash;$400,000 annually</span>{" "}
             by locating in Industry City.
           </p>
         </div>
-      </section>
+      </ParallaxChapter>
 
-      {/* CHAPTER 03 — TODAY */}
-      <section style={{ background: "#fcf9ec", borderBottom: "1px solid var(--beige)" }}>
-        <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 9", overflow: "hidden", background: "#1a2e29" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/industry-city/today.webp"
-            alt="Industry City courtyard at sunset"
-            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
-          />
-        </div>
-        <div style={{ padding: "1.25rem 2rem 0", borderBottom: "1px solid var(--beige)" }}>
-          <p
+      {/* CHAPTER 03 — TODAY (parallax over modern photo) */}
+      <ParallaxChapter src="/industry-city/today.webp" alt="Industry City courtyard at sunset" scrollHeight="320vh">
+        <div style={{ ...CHAPTER_NUM, color: "#cdf765" }}>03 — Today</div>
+        <h2 style={{ ...CHAPTER_TITLE, color: "#fcf9ec" }}>
+          Industry city
+          <em
             style={{
               fontFamily: "Afacad, sans-serif",
               fontStyle: "italic",
-              fontSize: "0.85rem",
-              color: "rgba(35,60,54,0.6)",
-              maxWidth: "780px",
-              margin: "0 auto",
-              paddingBottom: "1.25rem",
+              fontWeight: 400,
+              textTransform: "none",
+              letterSpacing: "0",
+              color: "#cdf765",
+              fontSize: "1.04em",
+              display: "block",
+              marginTop: "0.2em",
             }}
           >
-            The Industry City courtyards at dusk &mdash; six million square feet, reimagined for the modern innovation economy.
+            today
+          </em>
+        </h2>
+        <p style={{ ...CHAPTER_SUB, color: "rgba(252,249,236,0.78)" }}>
+          Keeping to the entrepreneurial spirit of the property, a $450 million redevelopment modernized the campus to support the modern innovation economy and bring quality jobs back to the waterfront.
+        </p>
+
+        <div style={{ ...HAIR_RULE("rgba(252,249,236,0.22)"), margin: "3rem 0 2rem" }} />
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", color: "rgba(252,249,236,0.9)", maxWidth: "720px" }}>
+          <p style={BODY_P}>
+            Today the campus is home to <strong style={{ color: "#cdf765", fontWeight: 600 }}>550 founder-led companies</strong>, buzzing with creatives across industries who build their businesses together on campus.
+          </p>
+          <p style={BODY_P}>
+            During your time at Beanstalk, you&rsquo;ll have opportunities to join the king&rsquo;s army and become an expert archer 🏹, learn the esoteric nuances of the hundred-year-old game of pétanque ⚫, wind down by going bowling with new friends 🎳, and enjoy an impeccable selection of beers and spirits across five <em>royal</em> distilleries 🥃 and beer halls 🍻 within the city walls.
           </p>
         </div>
 
-        <div style={{ padding: "8rem 2rem", maxWidth: "780px", margin: "0 auto" }}>
-          <div style={{ ...CHAPTER_NUM, color: "var(--tan)" }}>03 — Today</div>
-          <h2 style={CHAPTER_TITLE}>
-            Industry city
-            <em
-              style={{
-                fontFamily: "Afacad, sans-serif",
-                fontStyle: "italic",
-                fontWeight: 400,
-                textTransform: "none",
-                letterSpacing: "0",
-                color: "var(--tan)",
-                fontSize: "1.04em",
-                display: "block",
-                marginTop: "0.2em",
-              }}
-            >
-              today
-            </em>
-          </h2>
-          <p style={{ ...CHAPTER_SUB, color: "rgba(35,60,54,0.78)" }}>
-            Keeping to the entrepreneurial spirit of the property, a $450 million redevelopment modernized the campus to support the modern innovation economy and bring quality jobs back to the waterfront.
-          </p>
-
-          <div style={{ ...HAIR_RULE(), margin: "4rem 0 2.5rem" }} />
-
-          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", color: "rgba(35,60,54,0.85)" }}>
-            <p style={BODY_P}>
-              Today the campus is home to <strong style={{ color: "#233c36", fontWeight: 600 }}>550 founder-led companies</strong>, buzzing with creatives across industries who build their businesses together on campus.
-            </p>
-            <p style={BODY_P}>
-              During your time at Beanstalk, you&rsquo;ll have opportunities to join the king&rsquo;s army and become an expert archer 🏹, learn the esoteric nuances of the hundred-year-old game of pétanque ⚫, wind down by going bowling with new friends 🎳, and enjoy an impeccable selection of beers and spirits across five <em>royal</em> distilleries 🥃 and beer halls 🍻 within the city walls.
-            </p>
-          </div>
-
-          {/* Stat row */}
-          <div
-            style={{
-              marginTop: "5rem",
-              paddingTop: "2rem",
-              borderTop: "1px solid var(--beige)",
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "1rem",
-            }}
-          >
-            {[
-              { v: "550+", l: "Founder-led companies" },
-              { v: "$450M", l: "Redevelopment" },
-              { v: "6M sq ft", l: "Industrial floor space" },
-            ].map((s, i) => (
-              <div key={i} style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                <strong style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(1.6rem, 3vw, 2.25rem)", color: "#233c36", lineHeight: 1 }}>{s.v}</strong>
-                <span style={{ ...EYEBROW, color: "var(--tan)" }}>{s.l}</span>
-              </div>
-            ))}
-          </div>
+        <div
+          style={{
+            marginTop: "3rem",
+            paddingTop: "1.5rem",
+            borderTop: "1px solid rgba(252,249,236,0.18)",
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "1rem",
+            maxWidth: "720px",
+          }}
+        >
+          {[
+            { v: "550+", l: "Founder-led companies" },
+            { v: "$450M", l: "Redevelopment" },
+            { v: "6M sq ft", l: "Industrial floor space" },
+          ].map((s, i) => (
+            <div key={i} style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+              <strong style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(1.4rem, 2.6vw, 2rem)", color: "#fcf9ec", lineHeight: 1 }}>{s.v}</strong>
+              <span style={{ ...EYEBROW, color: "#cdf765", opacity: 0.7 }}>{s.l}</span>
+            </div>
+          ))}
         </div>
-      </section>
+      </ParallaxChapter>
 
       {/* CLOSING CTA */}
       <section style={{ background: "#cdf765" }}>

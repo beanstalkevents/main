@@ -2,7 +2,7 @@ import guests from "@/data/guests.json";
 
 type Guest = { name: string; org: string; title: string; headshot: string };
 
-const ROWS = 5;
+const ROWS = 3;
 
 function partition<T>(items: T[], rows: number): T[][] {
   const out: T[][] = Array.from({ length: rows }, () => []);
@@ -16,9 +16,9 @@ function Card({ g }: { g: Guest }) {
       style={{
         position: "relative",
         flexShrink: 0,
-        width: "110px",
-        height: "110px",
-        borderRadius: "10px",
+        width: "165px",
+        height: "165px",
+        borderRadius: "14px",
         overflow: "hidden",
         background: "#1a2e29",
       }}
@@ -42,7 +42,7 @@ function Card({ g }: { g: Guest }) {
           left: 0,
           right: 0,
           bottom: 0,
-          padding: "22px 8px 6px",
+          padding: "32px 12px 10px",
           background:
             "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.92) 100%)",
         }}
@@ -50,7 +50,7 @@ function Card({ g }: { g: Guest }) {
         <div
           style={{
             fontFamily: "Afacad, sans-serif",
-            fontSize: "9px",
+            fontSize: "13px",
             fontWeight: 600,
             color: "#fcf9ec",
             lineHeight: 1.15,
@@ -65,7 +65,7 @@ function Card({ g }: { g: Guest }) {
           <div
             style={{
               fontFamily: "Afacad, sans-serif",
-              fontSize: "8px",
+              fontSize: "11px",
               color: "rgba(252,249,236,0.78)",
               lineHeight: 1.15,
               whiteSpace: "nowrap",
@@ -79,7 +79,7 @@ function Card({ g }: { g: Guest }) {
         <div
           style={{
             fontFamily: "Afacad, sans-serif",
-            fontSize: "8px",
+            fontSize: "11px",
             color: "#cdf765",
             lineHeight: 1.15,
             whiteSpace: "nowrap",
@@ -103,7 +103,7 @@ function Row({ items, reverse, duration }: { items: Guest[]; reverse: boolean; d
         className={reverse ? "attendee-row attendee-row-reverse" : "attendee-row"}
         style={{
           display: "flex",
-          gap: "10px",
+          gap: "14px",
           width: "max-content",
           animationDuration: `${duration}s`,
         }}
