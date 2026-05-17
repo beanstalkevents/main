@@ -137,8 +137,7 @@ export default function HomePage() {
             The largest and most important retail event uniting the Disruptor Brands ecosystem. Founders, operators, and investors—all in one room.
           </p>
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScP-JFqLpDlqk5cnVsZ0s1RzJXu7oe6Jwmlb8WSI2JtjwaytA/viewform"
-            target="_blank" rel="noopener noreferrer"
+            href="/tickets"
             className="inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase px-6 py-3"
             style={{ background: "#cdf765", color: "#233c36", letterSpacing: "0.08em" }}
           >

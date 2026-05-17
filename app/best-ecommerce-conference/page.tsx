@@ -105,8 +105,7 @@ export default function BestEcommerceConferencePage() {
             There are dozens of retail and ecommerce conferences every year. One stands above the rest for DTC and digitally native brands: Beanstalk.
           </p>
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScP-JFqLpDlqk5cnVsZ0s1RzJXu7oe6Jwmlb8WSI2JtjwaytA/viewform"
-            target="_blank" rel="noopener noreferrer"
+            href="/tickets"
             className="inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase px-6 py-3"
             style={{ background: "#cdf765", color: "#233c36", letterSpacing: "0.08em" }}
           >
@@ -208,8 +207,7 @@ export default function BestEcommerceConferencePage() {
             — Harley Finkelstein, President at Shopify
           </p>
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScP-JFqLpDlqk5cnVsZ0s1RzJXu7oe6Jwmlb8WSI2JtjwaytA/viewform"
-            target="_blank" rel="noopener noreferrer"
+            href="/tickets"
             className="self-start text-xs font-semibold tracking-wider uppercase px-5 py-3 mt-2"
             style={{ background: "#233c36", color: "#cdf765", letterSpacing: "0.08em" }}
           >
