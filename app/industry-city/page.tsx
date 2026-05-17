@@ -390,8 +390,7 @@ export default function IndustryCityPage() {
             See you in Brooklyn &mdash; September 14&ndash;16, 2026.
           </p>
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScP-JFqLpDlqk5cnVsZ0s1RzJXu7oe6Jwmlb8WSI2JtjwaytA/viewform"
-            target="_blank" rel="noopener noreferrer"
+            href="/tickets"
             style={{
               ...EYEBROW,
               background: "#233c36",

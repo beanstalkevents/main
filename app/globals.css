@@ -706,3 +706,529 @@ h1, h2, h3 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua'
     .meetings-note { grid-template-columns: 1fr; gap: 16px; }
     .meetings-note-label { writing-mode: horizontal-tb; transform: none; border-right: none; border-bottom: 1px solid var(--beige); padding-right: 0; padding-bottom: 12px; }
   }
+
+/* ───────── /stay page ───────── */
+
+  /* ───────── Fixed background video stack ───────── */
+  .stay-page .video-stack {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    background: #0a0a0a;
+    overflow: hidden;
+  }
+  .stay-page .video-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1100ms cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity;
+  }
+  .stay-page .video-layer.active { opacity: 1; }
+  /* Subtle scrim so cream text is always legible */
+  .stay-page .video-scrim {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.18) 28%, rgba(0,0,0,0.18) 72%, rgba(0,0,0,0.55) 100%),
+      radial-gradient(circle at 50% 60%, transparent 0%, rgba(0,0,0,0.20) 100%);
+    pointer-events: none;
+    z-index: 2;
+  }
+  /* Soft brand tint */
+  .stay-page .video-tint {
+    position: absolute;
+    inset: 0;
+    background: rgba(35, 60, 54, 0.08);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* ───────── Fixed chrome (logotype, motion toggle, progress) ───────── */
+  .stay-page .chrome-top {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 10;
+    padding: 32px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+  }
+  .stay-page .chrome-top > * { pointer-events: auto; }
+  .stay-page .logotype {
+    font-family: "NewSpirit", Georgia, serif;
+    font-size: 22px;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .stay-page .logotype-sprout { font-size: 18px; line-height: 1; }
+  .stay-page .logotype em { font-style: italic; }
+
+  .stay-page .chrome-eyebrow {
+    font-family: "Afacad", system-ui, sans-serif;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.7;
+  }
+
+  .stay-page .chrome-bottom {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 10;
+    padding: 32px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    pointer-events: none;
+  }
+  .stay-page .chrome-bottom > * { pointer-events: auto; }
+
+  .stay-page .motion-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    color: var(--cream);
+    font-family: "Afacad", system-ui, sans-serif;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  .stay-page .motion-toggle:hover { opacity: 1; }
+  .stay-page .motion-toggle::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--light-green);
+    box-shadow: 0 0 8px rgba(205,247,101,0.6);
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+  .stay-page .motion-toggle.paused::before {
+    background: var(--tan);
+    box-shadow: none;
+  }
+
+  /* Section pagination dots */
+  .stay-page .pagination {
+    position: fixed;
+    right: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .stay-page .pagination-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(252, 249, 236, 0.25);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.4s, transform 0.4s;
+  }
+  .stay-page .pagination-dot.active {
+    background: var(--cream);
+    transform: scale(1.4);
+  }
+  .stay-page .pagination-dot:hover { background: rgba(252, 249, 236, 0.6); }
+
+  /* ───────── Scroll sections ───────── */
+  .stay-page main { position: relative; z-index: 5; }
+  .stay-page .section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 48px;
+  }
+  .stay-page .section-inner {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Section 1 — Intro */
+  .stay-page .intro-inner {
+    text-align: center;
+    max-width: 900px;
+  }
+  .stay-page .intro-eyebrow {
+    font-family: "Afacad", system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.7;
+    margin-bottom: 28px;
+  }
+  .stay-page .intro-headline {
+    font-family: "NewSpirit", Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(56px, 8vw, 112px);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    color: var(--cream);
+    margin-bottom: 32px;
+  }
+  .stay-page .intro-headline em { font-style: italic; color: var(--light-green); }
+  .stay-page .intro-deck {
+    font-family: "NewSpirit", Georgia, serif;
+    font-style: italic;
+    font-size: clamp(18px, 1.8vw, 22px);
+    line-height: 1.55;
+    color: var(--cream);
+    opacity: 0.88;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .stay-page .intro-scroll-cue {
+    margin-top: 64px;
+    font-family: "Afacad", system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.55;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .stay-page .intro-scroll-cue::after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 36px;
+    background: var(--cream);
+    opacity: 0.4;
+    animation: drop 2s ease-in-out infinite;
+    transform-origin: top;
+  }
+  @keyframes drop {
+    0%, 100% { transform: scaleY(0.4); opacity: 0.2; }
+    50% { transform: scaleY(1); opacity: 0.6; }
+  }
+
+  /* Hotel sections */
+  .stay-page .hotel-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    max-width: 680px;
+  }
+  .stay-page .hotel-num {
+    font-family: "NewSpirit", Georgia, serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--cream);
+    opacity: 0.7;
+    letter-spacing: 0.05em;
+  }
+  .stay-page .hotel-name {
+    font-family: "NewSpirit", Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(64px, 9vw, 128px);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    color: var(--cream);
+  }
+  .stay-page .hotel-name em { font-style: italic; }
+  .stay-page .hotel-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 8px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(252, 249, 236, 0.25);
+    max-width: 560px;
+  }
+  .stay-page .meta-item-label {
+    font-family: "Afacad", system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.6;
+    margin-bottom: 6px;
+  }
+  .stay-page .meta-item-value {
+    font-family: "NewSpirit", Georgia, serif;
+    font-size: 17px;
+    color: var(--cream);
+    line-height: 1.4;
+  }
+  .stay-page .meta-item-value em {
+    font-style: italic;
+    color: var(--mint);
+  }
+  .stay-page .meta-item-value em.lime { color: var(--light-green); }
+  .stay-page .meta-item-value .strike {
+    color: var(--cream);
+    opacity: 0.45;
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+  .stay-page .meta-item-value .save-pill {
+    display: inline-block;
+    font-family: "Afacad", system-ui, sans-serif;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--dark-green);
+    background: var(--light-green);
+    padding: 3px 8px;
+    border-radius: 2px;
+    vertical-align: 2px;
+  }
+  .stay-page .meta-item-value em {
+    font-style: italic;
+    color: var(--light-green);
+  }
+
+  /* — Clickable address (opens Google Maps directions) — */
+  .stay-page .meta-link {
+    display: block;
+    text-decoration: none;
+    color: var(--cream);
+    position: relative;
+    padding-bottom: 22px;
+    transition: color 0.3s;
+  }
+  .stay-page .meta-link:hover { color: var(--light-green); }
+  .stay-page .meta-link-cue {
+    display: block;
+    margin-top: 8px;
+    font-family: "Afacad", system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.55;
+    transition: opacity 0.3s, color 0.3s, transform 0.3s;
+  }
+  .stay-page .meta-link:hover .meta-link-cue {
+    opacity: 1;
+    color: var(--light-green);
+    transform: translateX(4px);
+  }
+
+  /* — Unlock-swipe CTA — */
+  .stay-page .hotel-cta {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--cream);
+    color: var(--dark-green);
+    padding: 22px 32px;
+    font-family: "Afacad", system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    align-self: start;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    min-width: 280px;
+    justify-content: flex-start;
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 0.55s cubic-bezier(0.65, 0, 0.35, 1) 0.55s;
+  }
+
+  /* The green wipe layer */
+  .stay-page .hotel-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--light-green);
+    transform: translateX(-101%);
+    transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+    z-index: 0;
+  }
+  .stay-page .hotel-cta:hover::before { transform: translateX(0); }
+
+  /* Content sits above the wipe */
+  .stay-page .hotel-cta .cta-label, .stay-page .hotel-cta .cta-arrow {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1),
+                opacity 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  .stay-page .hotel-cta:hover .cta-arrow { transform: translateX(6px); }
+
+  /* iPhone-style shimmer on the label so it reads as "swipeable" */
+  .stay-page .hotel-cta .cta-label {
+    background: linear-gradient(
+      90deg,
+      var(--dark-green) 0%,
+      var(--dark-green) 40%,
+      rgba(35, 60, 54, 0.35) 50%,
+      var(--dark-green) 60%,
+      var(--dark-green) 100%
+    );
+    background-size: 250% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-position: 200% 0;
+    animation: ctaShimmer 2.6s linear infinite;
+  }
+  @keyframes ctaShimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -50% 0; }
+  }
+
+  /* ─── UNLOCKING SEQUENCE ───
+     1) 0.00–0.45s — lime green wipes left → right (fills the box)
+     2) 0.20–0.70s — label + arrow slide together off the right edge
+     3) 0.55–1.10s — the box is "eaten" from the LEFT, chasing the content rightward,
+                     like the iPhone unlock track being consumed by the swipe.
+  */
+  .stay-page .hotel-cta.unlocking { pointer-events: none; }
+
+  /* Step 1 — green wipe locks in */
+  .stay-page .hotel-cta.unlocking::before {
+    transform: translateX(0);
+    transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  /* Step 2 — content slides off right together */
+  .stay-page .hotel-cta.unlocking .cta-label {
+    animation: none;
+    -webkit-text-fill-color: var(--dark-green);
+    background: none;
+    transform: translateX(350%);
+    opacity: 0;
+    transition:
+      transform 0.5s cubic-bezier(0.65, 0, 0.35, 1) 0.2s,
+      opacity 0.5s ease-out 0.35s;
+  }
+  .stay-page .hotel-cta.unlocking .cta-arrow {
+    transform: translateX(350%);
+    opacity: 0;
+    transition:
+      transform 0.5s cubic-bezier(0.65, 0, 0.35, 1) 0.2s,
+      opacity 0.5s ease-out 0.35s;
+  }
+
+  /* Step 3 — box gets eaten from the LEFT edge (clip-path inset left grows to 100%) */
+  .stay-page .hotel-cta.unlocking {
+    clip-path: inset(0 0 0 100%);
+    transition: clip-path 0.55s cubic-bezier(0.65, 0, 0.35, 1) 0.55s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stay-page .hotel-cta .cta-label {
+      animation: none;
+      -webkit-text-fill-color: var(--dark-green);
+      background: none;
+    }
+    .stay-page .hotel-cta, .stay-page .hotel-cta::before, .stay-page .hotel-cta.unlocking, .stay-page .hotel-cta.unlocking::before, .stay-page .hotel-cta.unlocking .cta-label, .stay-page .hotel-cta.unlocking .cta-arrow { transition: none; animation: none; }
+  }
+
+  /* Outro section */
+  .stay-page .outro-inner {
+    text-align: center;
+    max-width: 720px;
+  }
+  .stay-page .outro-headline {
+    font-family: "NewSpirit", Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+    margin-bottom: 24px;
+  }
+  .stay-page .outro-headline em { font-style: italic; color: var(--light-green); }
+  .stay-page .outro-deck {
+    font-family: "NewSpirit", Georgia, serif;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--cream);
+    opacity: 0.85;
+    margin-bottom: 36px;
+  }
+  .stay-page .outro-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--cream);
+    text-decoration: none;
+    font-family: "Afacad", system-ui, sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--cream);
+    padding-bottom: 6px;
+    transition: color 0.3s, border-color 0.3s;
+  }
+  .stay-page .outro-link:hover {
+    color: var(--light-green);
+    border-color: var(--light-green);
+  }
+  .stay-page .outro-link::after { content: '→'; }
+
+  /* ───────── Section enter animation ───────── */
+  .stay-page .section-inner > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 900ms ease-out, transform 900ms ease-out;
+  }
+  .stay-page .section.in-view .section-inner > * {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .stay-page .section.in-view .section-inner > *:nth-child(1) { transition-delay: 100ms; }
+  .stay-page .section.in-view .section-inner > *:nth-child(2) { transition-delay: 220ms; }
+  .stay-page .section.in-view .section-inner > *:nth-child(3) { transition-delay: 340ms; }
+  .stay-page .section.in-view .section-inner > *:nth-child(4) { transition-delay: 460ms; }
+  .stay-page .section.in-view .section-inner > *:nth-child(5) { transition-delay: 580ms; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stay-page .video-layer { transition: none; }
+    .stay-page .section-inner > * { transition: none; opacity: 1; transform: none; }
+    .stay-page .intro-scroll-cue::after { animation: none; }
+  }
+
+  @media (max-width: 800px) {
+    .stay-page .chrome-top, .stay-page .chrome-bottom { padding: 20px 24px; }
+    .stay-page .section { padding: 0 24px; }
+    .stay-page .pagination { right: 18px; }
+    .stay-page .hotel-meta { grid-template-columns: 1fr; gap: 18px; }
+    .stay-page .hotel-cta { padding: 18px 24px; font-size: 11px; }
+  }

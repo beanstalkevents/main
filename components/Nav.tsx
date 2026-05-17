@@ -5,6 +5,7 @@ import Link from "next/link";
 const navLinks = [
   { label: "What to Expect", href: "/#expect" },
   { label: "Location", href: "/industry-city" },
+  { label: "Stay", href: "/stay" },
   { label: "Agenda", href: "/#agenda" },
   { label: "Attendees", href: "/#attendees" },
   { label: "Speak", href: "/#speak" },
@@ -65,9 +66,7 @@ export default function Nav() {
 
         {/* CTA */}
         <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLScP-JFqLpDlqk5cnVsZ0s1RzJXu7oe6Jwmlb8WSI2JtjwaytA/viewform"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/tickets"
           className="hidden md:inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase px-4 py-2 transition-all"
           style={{
             background: "#cdf765",
@@ -122,9 +121,7 @@ export default function Nav() {
             </Link>
           ))}
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScP-JFqLpDlqk5cnVsZ0s1RzJXu7oe6Jwmlb8WSI2JtjwaytA/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/tickets"
             className="inline-flex items-center justify-center gap-2 text-xs font-semibold tracking-wider uppercase px-4 py-3 mt-2"
             style={{ background: "#cdf765", color: "#233c36" }}
           >
