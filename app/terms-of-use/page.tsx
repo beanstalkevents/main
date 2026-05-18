@@ -1,7 +1,8 @@
 import LegalPage from "@/components/LegalPage";
 import type { Metadata } from "next";
+import { canonical } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Terms of Use — Beanstalk" };
+export const metadata: Metadata = { title: "Terms of Use — Beanstalk", alternates: { canonical: canonical("/terms-of-use") } };
 
 const P = ({ children }: { children: React.ReactNode }) => (
   <p className="text-base leading-relaxed" style={{ color: "#4a4a4a", marginBottom: "12px" }}>{children}</p>

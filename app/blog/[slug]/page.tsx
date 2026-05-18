@@ -5,6 +5,7 @@ import { blogPosts, getPostBySlug } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { canonical } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -20,6 +21,7 @@ export async function generateMetadata({
   return {
     title: `${post.title} — Beanstalk`,
     description: post.excerpt,
+    alternates: { canonical: canonical(`/blog/${params.slug}`) },
     openGraph: {
       title: post.title,
       description: post.excerpt,

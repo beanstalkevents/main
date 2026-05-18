@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Newsreader, Inter } from "next/font/google";
 import Script from "next/script";
 import GAListener from "./components/GAListener";
+import { getSiteUrl, isProduction } from "@/lib/seo";
 import "./globals.css";
 
 const GA_ID = "G-HQKR0JKMXZ";
@@ -22,14 +23,22 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.beanstalkevents.com"),
+  metadataBase: new URL(getSiteUrl()),
   title: "Beanstalk 2026 — Industry City, Brooklyn",
   description:
     "The largest retail and DTC conference in America. September 14–16, 2026 at Industry City, Brooklyn. 1,000+ leaders. 10,000+ executive meetings.",
+  alternates: { canonical: "/" },
+  robots: isProduction()
+    ? { index: true, follow: true }
+    : {
+        index: false,
+        follow: false,
+        googleBot: { index: false, follow: false },
+      },
   openGraph: {
     title: "Beanstalk 2026",
     description: "The largest retail and DTC conference in America.",
-    url: "https://www.beanstalkevents.com",
+    url: getSiteUrl(),
     siteName: "Beanstalk",
     images: [{ url: "/images/og.jpg", width: 1200, height: 630 }],
     type: "website",
@@ -52,6 +61,41 @@ export default function RootLayout({
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>" />
       </head>
       <body>
+        {/* Organization JSON-LD */}
+        <Script
+          id="ld-organization"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Beanstalk Events",
+              legalName: "Beanstalk Events Inc.",
+              url: "https://beanstalkevents.com",
+              sameAs: [
+                "https://www.linkedin.com/company/beanstalkevents",
+                "https://www.youtube.com/@BeanstalkEvents",
+              ],
+            }),
+          }}
+        />
+
+        {/* WebSite JSON-LD */}
+        <Script
+          id="ld-website"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Beanstalk",
+              url: "https://beanstalkevents.com",
+            }),
+          }}
+        />
+
         {children}
 
         {/* Google Analytics 4 */}

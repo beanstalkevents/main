@@ -4,11 +4,13 @@ import Footer from "@/components/Footer";
 import ParallaxChapter from "@/components/ParallaxChapter";
 import IndustryCityHero from "@/components/IndustryCityHero";
 import type { Metadata } from "next";
+import { canonical } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Industry City, Brooklyn — Beanstalk 2026",
   description:
     "Beanstalk 2026 takes place at Industry City in Brooklyn, NY — September 14–16, 2026.",
+  alternates: { canonical: canonical("/industry-city") },
 };
 
 const EYEBROW: React.CSSProperties = {

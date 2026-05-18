@@ -3,6 +3,7 @@ import PartnerRibbon from "@/components/PartnerRibbon";
 import Footer from "@/components/Footer";
 import StayBody from "@/components/StayBody";
 import type { Metadata } from "next";
+import { canonical } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Stay — Beanstalk 2026",
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
       "Two Manhattan hotels with Beanstalk-rate room blocks, both 20 minutes from Industry City with morning shuttles provided.",
     type: "website",
   },
+  alternates: { canonical: canonical("/stay") },
 };
 
 export default function StayPage() {

@@ -2,6 +2,7 @@ import SiteNav from "@/components/SiteNav";
 import PartnerRibbon from "@/components/PartnerRibbon";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
+import { canonical } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Best Ecommerce Conferences 2026 — Beanstalk",
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
     "ecommerce summit",
     "direct to consumer conference",
   ],
+  alternates: { canonical: canonical("/best-ecommerce-conference") },
 };
 
 const comparisons = [

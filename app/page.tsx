@@ -1,5 +1,7 @@
+import Script from "next/script";
 import SiteNav from "@/components/SiteNav";
 import PartnerRibbon from "@/components/PartnerRibbon";
+import { canonical } from "@/lib/seo";
 import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
 import AttendeesCarousel from "@/components/AttendeesCarousel";
@@ -11,6 +13,7 @@ export const metadata: Metadata = {
   title: "Beanstalk 2026 — The DTC & Retail Conference",
   description:
     "The largest and most important retail event uniting the Disruptor Brands ecosystem. September 14–16, 2026 at Industry City, Brooklyn.",
+  alternates: { canonical: canonical("/") },
 };
 
 const stats = [
@@ -113,6 +116,52 @@ const verticals = [
 export default function HomePage() {
   return (
     <div style={{ background: "var(--cream)" }}>
+      {/* Event JSON-LD */}
+      <Script
+        id="ld-event"
+        type="application/ld+json"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BusinessEvent",
+            name: "Beanstalk 2026",
+            description:
+              "The largest gathering of executives of Disruptor Brands in North America. Three days of 1:1 meetings, boardroom discussions, and private dinners with founders, CEOs, and senior operators.",
+            startDate: "2026-09-14T09:00:00-04:00",
+            endDate: "2026-09-16T18:00:00-04:00",
+            eventAttendanceMode:
+              "https://schema.org/OfflineEventAttendanceMode",
+            eventStatus: "https://schema.org/EventScheduled",
+            location: {
+              "@type": "Place",
+              name: "Industry City",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "220 36th Street",
+                addressLocality: "Brooklyn",
+                addressRegion: "NY",
+                postalCode: "11232",
+                addressCountry: "US",
+              },
+            },
+            organizer: {
+              "@type": "Organization",
+              name: "Beanstalk Events",
+              url: "https://beanstalkevents.com",
+            },
+            offers: {
+              "@type": "Offer",
+              url: "https://beanstalkevents.com/tickets",
+              availability: "https://schema.org/InStock",
+              priceCurrency: "USD",
+              price: "3695",
+              validFrom: "2025-10-01T00:00:00-04:00",
+            },
+            image: ["https://beanstalkevents.com/images/og.jpg"],
+          }),
+        }}
+      />
       <SiteNav variant="hero" />
       <PartnerRibbon />
 

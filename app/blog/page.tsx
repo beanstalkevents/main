@@ -4,10 +4,12 @@ import Footer from "@/components/Footer";
 import { blogPosts } from "@/lib/blog";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { canonical } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Blog — Beanstalk 2026",
   description: "Speaker profiles and insights from the Beanstalk community.",
+  alternates: { canonical: canonical("/blog") },
 };
 
 export default function BlogIndex() {
