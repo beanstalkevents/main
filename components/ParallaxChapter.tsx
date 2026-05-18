@@ -94,7 +94,7 @@ export default function ParallaxChapter({
             alignItems: "center",
             justifyContent: "center",
             // Push content below the nav+ribbon stack (140px) plus breathing room
-            padding: "calc(140px + 2rem) 1.5rem 2rem",
+            padding: "calc(140px + 80px) 1.5rem 2rem",
             opacity: textOpacity,
             transform: `translateY(${textTranslate}px)`,
             willChange: "opacity, transform",
