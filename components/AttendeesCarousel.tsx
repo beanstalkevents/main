@@ -49,7 +49,7 @@ function Card({ g }: { g: Guest }) {
       >
         <div
           style={{
-            fontFamily: "Afacad, sans-serif",
+            fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
             fontSize: "13px",
             fontWeight: 600,
             color: "#fcf9ec",
@@ -64,7 +64,7 @@ function Card({ g }: { g: Guest }) {
         {g.title && (
           <div
             style={{
-              fontFamily: "Afacad, sans-serif",
+              fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
               fontSize: "11px",
               color: "rgba(252,249,236,0.78)",
               lineHeight: 1.15,
@@ -78,7 +78,7 @@ function Card({ g }: { g: Guest }) {
         )}
         <div
           style={{
-            fontFamily: "Afacad, sans-serif",
+            fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
             fontSize: "11px",
             color: "#cdf765",
             lineHeight: 1.15,
@@ -127,7 +127,7 @@ export default function AttendeesCarousel() {
         <h2
           className="mb-4"
           style={{
-            fontFamily: "NewSpirit, Georgia, serif",
+            fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
             fontSize: "clamp(28px, 4vw, 44px)",
             color: "#fcf9ec",
           }}

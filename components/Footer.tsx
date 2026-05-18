@@ -8,7 +8,7 @@ export default function Footer() {
     >
       <div className="max-w-content mx-auto px-6 md:px-12 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
         <div className="flex flex-col gap-2">
-          <span style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "24px", color: "#cdf765" }}>
+          <span style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontSize: "24px", color: "#cdf765" }}>
             Beanstalk
           </span>
           <p className="text-xs tracking-widest uppercase" style={{ color: "rgba(199,220,205,0.5)", letterSpacing: "0.1em" }}>

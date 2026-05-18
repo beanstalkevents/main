@@ -7,7 +7,7 @@ const P = ({ children }: { children: React.ReactNode }) => (
   <p className="text-base leading-relaxed" style={{ color: "#4a4a4a", marginBottom: "12px" }}>{children}</p>
 );
 const H2 = ({ children }: { children: React.ReactNode }) => (
-  <h2 style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "20px", color: "#233c36", marginTop: "28px", marginBottom: "8px", fontWeight: 700 }}>{children}</h2>
+  <h2 style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontSize: "20px", color: "#233c36", marginTop: "28px", marginBottom: "8px", fontWeight: 700 }}>{children}</h2>
 );
 const UL = ({ children }: { children: React.ReactNode }) => (
   <ul style={{ paddingLeft: "24px", marginBottom: "12px", display: "flex", flexDirection: "column", gap: "8px" }}>{children}</ul>

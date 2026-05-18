@@ -130,7 +130,7 @@ export default function HomePage() {
           <div className="inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1 mb-6" style={{ background: "#cdf765", color: "#233c36", letterSpacing: "0.14em" }}>
             September 14–16, 2026 · Industry City, Brooklyn
           </div>
-          <h1 className="mb-5" style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(48px, 7vw, 92px)", color: "#fcf9ec", lineHeight: 1.0, maxWidth: "820px" }}>
+          <h1 className="mb-5" style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontSize: "clamp(48px, 7vw, 92px)", color: "#fcf9ec", lineHeight: 1.0, maxWidth: "820px" }}>
             Where Disruptor<br />Brands Come<br />to Grow
           </h1>
           <p className="mb-10 text-lg leading-relaxed" style={{ color: "#c7dccd", maxWidth: "540px" }}>
@@ -147,7 +147,7 @@ export default function HomePage() {
         <div className="grid border-t relative" style={{ gridTemplateColumns: "repeat(4, 1fr)", borderColor: "rgba(255,255,255,0.08)", zIndex: 2 }}>
           {stats.map((s, i) => (
             <div key={i} className="px-8 py-7 flex flex-col gap-1" style={{ borderRight: i < stats.length - 1 ? "1px solid rgba(255,255,255,0.08)" : "none" }}>
-              <strong style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "28px", color: "#cdf765", lineHeight: 1 }}>{s.value}</strong>
+              <strong style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontSize: "28px", color: "#cdf765", lineHeight: 1 }}>{s.value}</strong>
               <span className="text-xs font-semibold uppercase" style={{ color: "#4a7a6a", letterSpacing: "0.12em" }}>{s.label}</span>
             </div>
           ))}
@@ -165,7 +165,7 @@ export default function HomePage() {
         <div className="max-w-content mx-auto px-6 md:px-12 py-20 grid md:grid-cols-2 gap-16 items-start">
           <div>
             <div className="section-label">About</div>
-            <h2 className="mb-5" style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(26px, 3.5vw, 38px)", color: "#233c36", lineHeight: 1.15 }}>
+            <h2 className="mb-5" style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontSize: "clamp(26px, 3.5vw, 38px)", color: "#233c36", lineHeight: 1.15 }}>
               What is Beanstalk?
             </h2>
             <p className="text-base leading-relaxed mb-4" style={{ color: "#4a4a4a" }}>
@@ -177,7 +177,7 @@ export default function HomePage() {
           </div>
           <div>
             <div className="section-label">Verticals</div>
-            <h2 className="mb-5" style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(26px, 3.5vw, 38px)", color: "#233c36", lineHeight: 1.15 }}>
+            <h2 className="mb-5" style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontSize: "clamp(26px, 3.5vw, 38px)", color: "#233c36", lineHeight: 1.15 }}>
               Retail categories
             </h2>
             <div className="flex flex-wrap gap-2">
@@ -193,17 +193,17 @@ export default function HomePage() {
       <section id="expect" style={{ background: "#233c36" }}>
         <div className="max-w-content mx-auto px-6 md:px-12 py-20">
           <div className="section-label dark">Format</div>
-          <h2 className="mb-12" style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(28px, 4vw, 44px)", color: "#fcf9ec", lineHeight: 1.1 }}>
+          <h2 className="mb-12" style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontSize: "clamp(28px, 4vw, 44px)", color: "#fcf9ec", lineHeight: 1.1 }}>
             This isn&apos;t your grandpa&apos;s conference
           </h2>
           <div className="grid gap-px" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", border: "1px solid rgba(255,255,255,0.08)" }}>
             {whatToExpect.map((item) => (
               <div key={item.num} className="p-7 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)" }}>
                 <div className="flex items-center gap-3">
-                  <span className="text-xs font-semibold" style={{ color: "#cdf765", fontFamily: "NewSpirit, serif" }}>{item.num}</span>
+                  <span className="text-xs font-semibold" style={{ color: "#cdf765", fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif" }}>{item.num}</span>
                   <span className="text-2xl">{item.icon}</span>
                 </div>
-                <h3 style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "18px", color: "#fcf9ec" }}>{item.title}</h3>
+                <h3 style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontSize: "18px", color: "#fcf9ec" }}>{item.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: "#c7dccd" }}>{item.desc}</p>
               </div>
             ))}
@@ -222,7 +222,7 @@ export default function HomePage() {
         <div className="max-w-content mx-auto px-6 md:px-12 py-20 grid md:grid-cols-2 gap-16 items-center">
           <div>
             <div className="section-label">Apply</div>
-            <h2 className="mb-5" style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(28px, 4vw, 44px)", color: "#233c36", lineHeight: 1.1 }}>
+            <h2 className="mb-5" style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontSize: "clamp(28px, 4vw, 44px)", color: "#233c36", lineHeight: 1.1 }}>
               Speak at Beanstalk
             </h2>
             <p className="text-base leading-relaxed mb-8" style={{ color: "#4a4a4a" }}>
@@ -249,7 +249,7 @@ export default function HomePage() {
         <div className="max-w-content mx-auto px-6 md:px-12 py-20 grid md:grid-cols-2 gap-16 items-center">
           <div>
             <div className="section-label dark">Partner</div>
-            <h2 className="mb-5" style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(28px, 4vw, 44px)", color: "#fcf9ec", lineHeight: 1.1 }}>
+            <h2 className="mb-5" style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontSize: "clamp(28px, 4vw, 44px)", color: "#fcf9ec", lineHeight: 1.1 }}>
               Sponsor Beanstalk
             </h2>
             <p className="text-base leading-relaxed mb-8" style={{ color: "#c7dccd" }}>
@@ -270,7 +270,7 @@ export default function HomePage() {
             ].map((s) => (
               <div key={s.tier} className="flex items-center justify-between px-5 py-4" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}>
                 <div>
-                  <div className="text-sm font-semibold mb-0.5" style={{ color: "#fcf9ec", fontFamily: "NewSpirit, serif" }}>{s.tier}</div>
+                  <div className="text-sm font-semibold mb-0.5" style={{ color: "#fcf9ec", fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif" }}>{s.tier}</div>
                   <div className="text-xs" style={{ color: "#c7dccd" }}>{s.desc}</div>
                 </div>
                 <span style={{ color: "#cdf765" }}>→</span>

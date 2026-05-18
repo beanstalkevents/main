@@ -20,7 +20,7 @@ export default function LegalPage({ title, lastUpdated, children }: LegalPagePro
             <span style={{ color: "#3d6358" }}>›</span>
             <span style={{ color: "#dfd5bc" }}>Legal</span>
           </nav>
-          <h1 style={{ fontFamily: "NewSpirit, Georgia, serif", fontSize: "clamp(28px, 4vw, 52px)", color: "#fcf9ec", lineHeight: 1.05 }}>
+          <h1 style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontSize: "clamp(28px, 4vw, 52px)", color: "#fcf9ec", lineHeight: 1.05 }}>
             {title}
           </h1>
           {lastUpdated && (

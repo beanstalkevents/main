@@ -40,7 +40,7 @@ export default function Nav() {
           {/* Text logo as fallback until image is placed */}
           <span
             style={{
-              fontFamily: "NewSpirit, Georgia, serif",
+              fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
               fontSize: "22px",
               color: "#cdf765",
               letterSpacing: "-0.01em",

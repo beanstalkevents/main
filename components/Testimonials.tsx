@@ -196,7 +196,7 @@ function CardEl({
         >
           <p
             style={{
-              fontFamily: "Afacad, sans-serif",
+              fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
               fontStyle: "italic",
               color: "#fcf9ec",
               fontSize: "14px",
@@ -223,7 +223,7 @@ function CardEl({
       >
         <div
           style={{
-            fontFamily: "NewSpirit, Georgia, serif",
+            fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
             color: "#cdf765",
             fontSize: "16px",
             lineHeight: 1.2,
@@ -234,7 +234,7 @@ function CardEl({
         </div>
         <div
           style={{
-            fontFamily: "Afacad, sans-serif",
+            fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
             color: "#ffffff",
             fontSize: "12px",
             opacity: 0.88,
@@ -549,7 +549,7 @@ export default function Testimonials() {
         <div className="section-label">Social proof</div>
         <h2
           style={{
-            fontFamily: "NewSpirit, Georgia, serif",
+            fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
             fontSize: "clamp(28px, 4vw, 44px)",
             color: "#233c36",
             lineHeight: 1.1,
