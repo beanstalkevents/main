@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Newsreader, Inter } from "next/font/google";
+import Script from "next/script";
+import GAListener from "./components/GAListener";
 import "./globals.css";
+
+const GA_ID = "G-HQKR0JKMXZ";
 
 const serif = Newsreader({
   subsets: ["latin"],
@@ -47,7 +51,29 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+
+        {/* Google Analytics 4 */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}', { send_page_view: false });
+          `}
+        </Script>
+        <GAListener gaId={GA_ID} />
+
+        {/* RB2B — anonymous visitor identification */}
+        <Script id="rb2b" strategy="afterInteractive">
+          {`!function () {var reb2b = window.reb2b = window.reb2b || [];if (reb2b.invoked) return;reb2b.invoked = true;reb2b.methods = ["identify", "collect"];reb2b.factory = function (method) {return function () {var args = Array.prototype.slice.call(arguments);args.unshift(method);reb2b.push(args);return reb2b;};};for (var i = 0; i < reb2b.methods.length; i++) {var key = reb2b.methods[i];reb2b[key] = reb2b.factory(key);}reb2b.load = function (key) {var script = document.createElement("script");script.type = "text/javascript";script.async = true;script.src = "https://s3-us-west-2.amazonaws.com/b2bjsstore/b/" + key + "/5NRP9HGL1YO1.js.gz";var first = document.getElementsByTagName("script")[0];first.parentNode.insertBefore(script, first);};reb2b.SNIPPET_VERSION = "1.0.1";reb2b.load("5NRP9HGL1YO1");}();`}
+        </Script>
+      </body>
     </html>
   );
 }
