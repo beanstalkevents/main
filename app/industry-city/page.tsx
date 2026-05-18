@@ -72,52 +72,10 @@ export default function IndustryCityPage() {
       <SiteNav variant="hero" />
       <PartnerRibbon />
 
-      {/* STAGES 1–3 — scroll-driven hero */}
+      {/* STAGES 1–4 — scroll-driven hero (split-screen → image → address → history) */}
       <IndustryCityHero />
 
-      {/* STAGE 4 — historical narrative over Bush Terminal photo */}
-      <ParallaxChapter
-        src="/industry-city/historic.jpg"
-        alt="Bush Terminal — A Great Industrial City Within A City"
-        scrollHeight="320vh"
-      >
-        <div style={{ ...CHAPTER_NUM, color: "#cdf765" }}>02 — The History</div>
-        <h2 style={{ ...CHAPTER_TITLE, color: "#fcf9ec" }}>
-          A great industrial
-          <em style={ITALIC_EM_LIME}>city within a city</em>
-        </h2>
-        <p style={{ ...CHAPTER_SUB, color: "rgba(252,249,236,0.78)" }}>
-          Founded by iconic American entrepreneur <em>Irving T. Bush</em> in the early 20th century, then known as Bush Terminal — the first facility of its kind in New York, employing more than 25,000 people.
-        </p>
-
-        <div style={{ ...HAIR_RULE("rgba(252,249,236,0.22)"), margin: "3rem 0 2rem" }} />
-
-        <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", color: "rgba(252,249,236,0.9)", maxWidth: "720px" }}>
-          <p style={BODY_P}>
-            Bush Terminal was one of the <strong style={{ color: "#cdf765", fontWeight: 600 }}>original entrepreneurial hubs</strong> in the United States, offering economies of scale that let even the smallest companies access facilities normally reserved for large, well-capitalized firms.
-          </p>
-          <p
-            style={{
-              fontFamily: "var(--font-serif)",
-              fontStyle: "italic",
-              fontWeight: 400,
-              fontSize: "clamp(1.1rem, 1.8vw, 1.35rem)",
-              lineHeight: 1.55,
-              color: "rgba(252,249,236,0.95)",
-              margin: "1.25rem 0 0",
-              fontVariationSettings: "'opsz' 14",
-            }}
-          >
-            In today&rsquo;s dollars, companies were able to save{" "}
-            <span style={{ color: "#cdf765", fontWeight: 500, fontStyle: "normal" }}>
-              $100,000–$400,000 annually
-            </span>{" "}
-            by locating in Industry City.
-          </p>
-        </div>
-      </ParallaxChapter>
-
-      {/* STAGE 4 cont. — today */}
+      {/* STAGE 5 — today */}
       <ParallaxChapter
         src="/industry-city/today.webp"
         alt="Industry City courtyard at sunset"

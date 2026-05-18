@@ -93,13 +93,15 @@ export default function ParallaxChapter({
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            padding: "4rem 1.5rem",
+            // Push content below the nav+ribbon stack (140px) plus breathing room
+            padding: "calc(140px + 2rem) 1.5rem 2rem",
             opacity: textOpacity,
             transform: `translateY(${textTranslate}px)`,
             willChange: "opacity, transform",
+            overflowY: "auto",
           }}
         >
-          <div style={{ maxWidth: "880px", width: "100%" }}>{children}</div>
+          <div style={{ maxWidth: "780px", width: "100%" }}>{children}</div>
         </div>
       </div>
     </section>

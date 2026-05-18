@@ -39,30 +39,47 @@ export default function IndustryCityHero() {
     };
   }, []);
 
-  // Panels slide apart between progress 0.25 → 0.5
-  const slide = easeOutCubic(smoothstep(0.25, 0.5, progress));
-  // Address card fades in between 0.55 → 0.78, holds, then fades out 0.92 → 1.0
+  // Stages over a 500vh section (400vh of scroll inside a 100vh sticky):
+  //   0.00 – 0.15  Stage 1: split-screen visible
+  //   0.15 – 0.30  Stage 2: panels slide out, image revealed
+  //   0.30 – 0.50  Stage 3: address card fades in, holds, fades out
+  //   0.50 – 0.95  Stage 4: history narrative fades in, holds, fades out
+  //   0.95 – 1.00  release (image still visible)
+  const slide = easeOutCubic(smoothstep(0.15, 0.30, progress));
+
   const cardOpacity =
-    smoothstep(0.55, 0.78, progress) * (1 - smoothstep(0.92, 1.0, progress));
-  const cardTranslate = (1 - cardOpacity) * 24;
+    smoothstep(0.30, 0.42, progress) * (1 - smoothstep(0.48, 0.55, progress));
+  const cardTy = (1 - cardOpacity) * 24;
+
+  const historyOpacity =
+    smoothstep(0.55, 0.68, progress) * (1 - smoothstep(0.88, 0.95, progress));
+  const historyTy = (1 - historyOpacity) * 24;
+
+  // Darken the image while text layers are showing
+  const overlay =
+    smoothstep(0.30, 0.55, progress) * 0.55 +
+    smoothstep(0.55, 0.7, progress) * 0.25;
 
   return (
     <section
       ref={wrapRef}
       className="ic-narrative"
-      style={{ position: "relative", height: "300vh", background: "#0a0a0a" }}
+      style={{ position: "relative", height: "500vh", background: "#0a0a0a" }}
     >
       <div className="ic-sticky">
-        {/* Layer 0 — sepia exterior image (always under) */}
+        {/* Layer 0 — historic exterior, continuous through Stages 2–4 */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/industry-city/historic.jpg"
           alt="Bush Terminal — Industry City exterior"
           className="ic-bg-image"
         />
-        <div className="ic-bg-tint" />
+        <div
+          className="ic-bg-tint"
+          style={{ background: `rgba(0, 0, 0, ${overlay})` }}
+        />
 
-        {/* Layer 1 — split-screen panels (Stage 1) — slide out left/right */}
+        {/* Layer 1 — Stage 1 split-screen panels */}
         <div className="ic-split">
           <div
             className="ic-split-panel ic-split-left"
@@ -124,28 +141,26 @@ export default function IndustryCityHero() {
           </div>
         </div>
 
-        {/* Layer 2 — address card (Stage 3) — fades in over revealed image */}
+        {/* Layer 2 — Stage 3 address card */}
         <div
           className="ic-address-card"
           style={{
             opacity: cardOpacity,
-            transform: `translateY(${cardTranslate}px)`,
+            transform: `translateY(${cardTy}px)`,
             pointerEvents: cardOpacity > 0.5 ? "auto" : "none",
           }}
         >
-          <div className="ic-eyebrow ic-eyebrow-tan" style={{ marginBottom: "1rem" }}>
+          <div className="ic-eyebrow ic-eyebrow-tan" style={{ marginBottom: "0.75rem" }}>
             01 — The Address
           </div>
           <h3 className="ic-card-title">
             Where to find
             <em className="ic-h1-em ic-h1-em-tan">Beanstalk</em>
           </h3>
-
           <div className="ic-card-rule" />
-
           <dl className="ic-card-dl">
             <dt className="ic-eyebrow ic-eyebrow-tan">Venue</dt>
-            <dd>Industry City — the venue for September 14–16, 2026.</dd>
+            <dd>Industry City — Sept 14–16, 2026.</dd>
 
             <dt className="ic-eyebrow ic-eyebrow-tan">Address</dt>
             <dd>
@@ -163,10 +178,47 @@ export default function IndustryCityHero() {
             </dd>
 
             <dt className="ic-eyebrow ic-eyebrow-tan">Entrance</dt>
-            <dd>
-              2nd Avenue, between 34th and 33rd Street. The Courtyard 7/8 gates — registration and the main entrance.
-            </dd>
+            <dd>2nd Ave, between 33rd and 34th — Courtyard 7/8 gates.</dd>
           </dl>
+        </div>
+
+        {/* Layer 3 — Stage 4 history narrative (replaces the standalone History
+                     ParallaxChapter so the same sticky image stays continuous) */}
+        <div
+          className="ic-history-overlay"
+          style={{
+            opacity: historyOpacity,
+            transform: `translateY(${historyTy}px)`,
+            pointerEvents: historyOpacity > 0.5 ? "auto" : "none",
+          }}
+        >
+          <div className="ic-history-inner">
+            <div className="ic-eyebrow ic-eyebrow-lime" style={{ marginBottom: "1rem" }}>
+              02 — The History
+            </div>
+            <h2 className="ic-history-title">
+              A great industrial
+              <em className="ic-h1-em ic-h1-em-lime">city within a city</em>
+            </h2>
+            <p className="ic-history-sub">
+              Founded by iconic American entrepreneur <em>Irving T. Bush</em> in the early 20th century — the first facility of its kind in New York, employing 25,000 people.
+            </p>
+            <div className="ic-card-rule ic-card-rule-on-dark" />
+            <p className="ic-history-body">
+              Bush Terminal was one of the{" "}
+              <strong style={{ color: "#cdf765", fontWeight: 600 }}>
+                original entrepreneurial hubs
+              </strong>{" "}
+              in the United States, offering economies of scale that let even the smallest companies access facilities normally reserved for large, well-capitalized firms.
+            </p>
+            <p className="ic-history-quote">
+              In today&rsquo;s dollars, companies could save{" "}
+              <span style={{ color: "#cdf765", fontWeight: 500, fontStyle: "normal" }}>
+                $100,000–$400,000 annually
+              </span>{" "}
+              by locating in Industry City.
+            </p>
+          </div>
         </div>
       </div>
     </section>
