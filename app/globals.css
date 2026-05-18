@@ -400,44 +400,44 @@ h1, h2, h3, h4 {
   }
 
   /* ───────── Sponsor tickets — three columns ───────── */
-  .sponsor-tickets {
+  .pricing-section {
     background: var(--cream);
     padding: 40px 48px 100px;
   }
-  .sponsor-inner { max-width: 1100px; margin: 0 auto; }
-  .ticket-grid {
+  .pricing-section-inner { max-width: 1100px; margin: 0 auto; }
+  .tier-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
     border-top: 1px solid var(--dark-green);
     border-bottom: 1px solid var(--dark-green);
   }
-  .ticket-col {
+  .tier-col {
     padding: 40px 32px 32px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     position: relative;
   }
-  .ticket-col + .ticket-col { border-left: 1px solid var(--beige); }
-  .ticket-col.featured { background: var(--dark-green); color: var(--cream); }
-  .ticket-col.featured .ticket-num,
-  .ticket-col.featured .ticket-name,
-  .ticket-col.featured .price-list-rung-amount { color: var(--light-green); }
-  .ticket-col.featured .ticket-tagline,
-  .ticket-col.featured .price-list-rung-deadline { color: var(--mint); }
-  .ticket-col.featured .ticket-fineprint { color: var(--tan); }
-  .ticket-col.featured .ticket-btn { background: var(--light-green); color: var(--dark-green); }
-  .ticket-col.featured .ticket-btn:hover { background: var(--cream); }
+  .tier-col + .tier-col { border-left: 1px solid var(--beige); }
+  .tier-col.featured { background: var(--dark-green); color: var(--cream); }
+  .tier-col.featured .tier-num,
+  .tier-col.featured .tier-name,
+  .tier-col.featured .price-list-rung-amount { color: var(--light-green); }
+  .tier-col.featured .tier-tagline,
+  .tier-col.featured .price-list-rung-deadline { color: var(--mint); }
+  .tier-col.featured .tier-fineprint { color: var(--tan); }
+  .tier-col.featured .tier-btn { background: var(--light-green); color: var(--dark-green); }
+  .tier-col.featured .tier-btn:hover { background: var(--cream); }
 
-  .ticket-num {
+  .tier-num {
     font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-style: italic;
     font-size: 14px;
     color: var(--tan);
     letter-spacing: 0.05em;
   }
-  .ticket-name {
+  .tier-name {
     font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-weight: 700;
     font-size: 26px;
@@ -445,19 +445,19 @@ h1, h2, h3, h4 {
     letter-spacing: -0.01em;
     color: var(--dark-green);
   }
-  .ticket-tagline {
+  .tier-tagline {
     font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-style: italic;
     font-size: 14.5px;
     line-height: 1.55;
     color: var(--mid-green);
   }
-  .ticket-divider {
+  .tier-divider {
     height: 1px;
     background: var(--beige);
     margin: 4px 0;
   }
-  .ticket-col.featured .ticket-divider { background: rgba(199,220,205,0.15); }
+  .tier-col.featured .tier-divider { background: rgba(199,220,205,0.15); }
 
   /* — Current price hero — */
   .price-hero {
@@ -474,7 +474,7 @@ h1, h2, h3, h4 {
     letter-spacing: -0.02em;
     color: var(--dark-green);
   }
-  .ticket-col.featured .price-hero-now { color: var(--light-green); }
+  .tier-col.featured .price-hero-now { color: var(--light-green); }
   .price-hero-base {
     font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-size: 20px;
@@ -482,7 +482,7 @@ h1, h2, h3, h4 {
     text-decoration: line-through;
     text-decoration-thickness: 1px;
   }
-  .ticket-col.featured .price-hero-base { color: var(--mint); opacity: 0.55; }
+  .tier-col.featured .price-hero-base { color: var(--mint); opacity: 0.55; }
   .price-hero-label {
     font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     font-size: 10px;
@@ -492,7 +492,7 @@ h1, h2, h3, h4 {
     color: var(--tan);
     margin-bottom: -8px;
   }
-  .ticket-col.featured .price-hero-label { color: var(--mint); }
+  .tier-col.featured .price-hero-label { color: var(--mint); }
 
   /* — Price ladder with current-tier highlight — */
   .price-list-rung {
@@ -508,13 +508,13 @@ h1, h2, h3, h4 {
   .price-list-rung.current {
     background: rgba(35,60,54,0.06);
   }
-  .ticket-col.featured .price-list-rung.current {
+  .tier-col.featured .price-list-rung.current {
     background: rgba(205,247,101,0.10);
   }
   .price-list-rung.current .price-list-rung-deadline {
     color: var(--dark-green);
   }
-  .ticket-col.featured .price-list-rung.current .price-list-rung-deadline {
+  .tier-col.featured .price-list-rung.current .price-list-rung-deadline {
     color: var(--light-green);
   }
   .price-list-rung.past {
@@ -537,15 +537,15 @@ h1, h2, h3, h4 {
     font-size: 16px;
     color: var(--dark-green);
   }
-  .ticket-col.featured .price-list-rung-deadline {
+  .tier-col.featured .price-list-rung-deadline {
     color: var(--mint);
   }
-  .ticket-col.featured .price-list-rung-amount {
+  .tier-col.featured .price-list-rung-amount {
     color: var(--cream);
   }
 
   /* — Save line under button — */
-  .ticket-save {
+  .tier-save {
     font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-style: italic;
     font-size: 13px;
@@ -554,14 +554,14 @@ h1, h2, h3, h4 {
     margin-top: -6px;
     letter-spacing: 0.02em;
   }
-  .ticket-col.featured .ticket-save { color: var(--mint); opacity: 0.85; }
-  .ticket-save strong {
+  .tier-col.featured .tier-save { color: var(--mint); opacity: 0.85; }
+  .tier-save strong {
     font-style: normal;
     font-weight: 700;
     color: var(--dark-green);
   }
-  .ticket-col.featured .ticket-save strong { color: var(--light-green); }
-  .ticket-btn {
+  .tier-col.featured .tier-save strong { color: var(--light-green); }
+  .tier-btn {
     margin-top: auto;
     display: inline-flex;
     align-items: center;
@@ -578,9 +578,9 @@ h1, h2, h3, h4 {
     text-decoration: none;
     transition: all 0.2s;
   }
-  .ticket-btn:hover { background: var(--mid-green); }
-  .ticket-btn::after { content: '→'; }
-  .ticket-fineprint {
+  .tier-btn:hover { background: var(--mid-green); }
+  .tier-btn::after { content: '→'; }
+  .tier-fineprint {
     font-size: 11px;
     color: var(--tan);
     line-height: 1.5;
@@ -633,13 +633,13 @@ h1, h2, h3, h4 {
   .meetings-note a:hover { border-bottom-color: var(--light-green); color: var(--dark-green); }
 
   /* ───────── Footer band ───────── */
-  .footer-band {
+  .outro-band {
     background: var(--dark-green);
     padding: 80px 48px;
     text-align: center;
   }
-  .footer-band-inner { max-width: 720px; margin: 0 auto; }
-  .footer-band-label {
+  .outro-band-inner { max-width: 720px; margin: 0 auto; }
+  .outro-band-label {
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.22em;
@@ -647,7 +647,7 @@ h1, h2, h3, h4 {
     color: var(--tan);
     margin-bottom: 20px;
   }
-  .footer-band h3 {
+  .outro-band h3 {
     font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-weight: 700;
     font-size: 36px;
@@ -655,8 +655,8 @@ h1, h2, h3, h4 {
     color: var(--cream);
     margin-bottom: 18px;
   }
-  .footer-band h3 em { font-style: italic; color: var(--light-green); }
-  .footer-band p {
+  .outro-band h3 em { font-style: italic; color: var(--light-green); }
+  .outro-band p {
     font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-style: italic;
     font-size: 17px;
@@ -664,7 +664,7 @@ h1, h2, h3, h4 {
     margin-bottom: 28px;
     line-height: 1.55;
   }
-  .footer-band-link {
+  .outro-band-link {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -678,18 +678,18 @@ h1, h2, h3, h4 {
     border-bottom: 1px solid var(--light-green);
     padding-bottom: 6px;
   }
-  .footer-band-link::after { content: '→'; }
+  .outro-band-link::after { content: '→'; }
 
   @media (max-width: 900px) {
-    .breadcrumb, .roomstrip, .transition, .sponsor-tickets, .footer-band { padding-left: 20px; padding-right: 20px; }
+    .breadcrumb, .roomstrip, .transition, .pricing-section, .outro-band { padding-left: 20px; padding-right: 20px; }
     .invite-page { padding: 30px 16px 50px; }
     .invite-card { padding: 56px 28px 40px; }
     .invite-card::before, .invite-card::after { left: 14px; right: 14px; }
     .invite-pathways { grid-template-columns: 1fr; margin: 0 -28px 32px; }
     .pathway + .pathway { border-left: none; border-top: 1px solid var(--dark-green); }
     .roomstrip-names { columns: 1; }
-    .ticket-grid { grid-template-columns: 1fr; }
-    .ticket-col + .ticket-col { border-left: none; border-top: 1px solid var(--beige); }
+    .tier-grid { grid-template-columns: 1fr; }
+    .tier-col + .tier-col { border-left: none; border-top: 1px solid var(--beige); }
     .meetings-note { grid-template-columns: 1fr; gap: 16px; }
     .meetings-note-label { writing-mode: horizontal-tb; transform: none; border-right: none; border-bottom: 1px solid var(--beige); padding-right: 0; padding-bottom: 12px; }
   }

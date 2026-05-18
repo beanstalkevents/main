@@ -58,7 +58,7 @@ export default function TicketsBody() {
 
     const t = today();
 
-    document.querySelectorAll<HTMLElement>(".ticket-col[data-audience]").forEach((col) => {
+    document.querySelectorAll<HTMLElement>(".tier-col[data-audience]").forEach((col) => {
       const aud = col.getAttribute("data-audience") || "";
       const base = parseInt(col.getAttribute("data-base") || "0", 10);
       const ladder = LADDERS[aud];
@@ -118,7 +118,7 @@ export default function TicketsBody() {
 
     const seePricingBtn = document.querySelector<HTMLAnchorElement>(".pathway-btn.down");
     const onPricingClick = (e: Event) => {
-      const target = document.getElementById("sponsor");
+      const target = document.getElementById("pricing");
       if (!target) return;
       e.preventDefault();
       const prefersReduced =
@@ -226,7 +226,7 @@ export default function TicketsBody() {
               <div className="pathway-desc">
                 For Sponsors, Investors,<br />Creators &amp; Media
               </div>
-              <a className="pathway-btn down" href="#sponsor">
+              <a className="pathway-btn down" href="#pricing">
                 See pricing
               </a>
             </div>
@@ -274,7 +274,7 @@ export default function TicketsBody() {
       </section>
 
       {/* ─────── TRANSITION ─────── */}
-      <section className="transition" id="sponsor">
+      <section className="transition" id="pricing">
         <div className="transition-label reveal">— Choose your audience —</div>
         <h2 className="reveal delay-1">
           Your ticket<br />
@@ -288,98 +288,98 @@ export default function TicketsBody() {
       </section>
 
       {/* ─────── SPONSOR TICKETS ─────── */}
-      <section className="sponsor-tickets">
-        <div className="sponsor-inner">
-          <div className="ticket-grid">
-            <div className="ticket-col reveal delay-1" data-audience="investors" data-base="3050">
-              <div className="ticket-num">— Audience 01 —</div>
-              <div className="ticket-name">
+      <section className="pricing-section">
+        <div className="pricing-section-inner">
+          <div className="tier-grid">
+            <div className="tier-col reveal delay-1" data-audience="investors" data-base="3050">
+              <div className="tier-num">— Audience 01 —</div>
+              <div className="tier-name">
                 Investors<br />&amp; Capital
               </div>
-              <div className="ticket-tagline">
+              <div className="tier-tagline">
                 For institutional investors, venture capital, growth equity, and family offices
                 actively deploying into consumer brands.
               </div>
-              <div className="ticket-divider"></div>
+              <div className="tier-divider"></div>
               <div className="price-hero-label">Current rate</div>
               <div className="price-hero">
                 <span className="price-hero-now" data-now></span>
                 <span className="price-hero-base" data-base-display></span>
               </div>
-              <div className="ticket-divider"></div>
+              <div className="tier-divider"></div>
               <div className="price-ladder"></div>
               <a
-                className="ticket-btn"
+                className="tier-btn"
                 href="https://beanstalk26-registration.personatech.com/form/initiate?fId=MGRlODllNmUtNDU0Ni00Y2M5LTkwOTctYjBiMGExMzdlOWNl"
               >
                 Apply now
               </a>
-              <div className="ticket-save" data-save></div>
+              <div className="tier-save" data-save></div>
             </div>
 
             <div
-              className="ticket-col featured reveal delay-2"
+              className="tier-col featured reveal delay-2"
               data-audience="sponsors"
               data-base="4695"
             >
-              <div className="ticket-num">— Audience 02 —</div>
-              <div className="ticket-name">
+              <div className="tier-num">— Audience 02 —</div>
+              <div className="tier-name">
                 Solution<br />Providers
               </div>
-              <div className="ticket-tagline">
+              <div className="tier-tagline">
                 For vendors, agencies, and SaaS companies selling into the Disruptor Brands
                 ecosystem. Hosted meetings available as an add-on.
               </div>
-              <div className="ticket-divider"></div>
+              <div className="tier-divider"></div>
               <div className="price-hero-label">Current rate</div>
               <div className="price-hero">
                 <span className="price-hero-now" data-now></span>
                 <span className="price-hero-base" data-base-display></span>
               </div>
-              <div className="ticket-divider"></div>
+              <div className="tier-divider"></div>
               <div className="price-ladder"></div>
               <a
-                className="ticket-btn"
+                className="tier-btn"
                 href="https://beanstalk26-registration.personatech.com/form/initiate?fId=OTI4OWI0NjQtYjFlYS00YzA3LWI4M2YtYmJlODEyOGVjNmI5"
               >
                 Apply now
               </a>
-              <div className="ticket-save" data-save></div>
+              <div className="tier-save" data-save></div>
             </div>
 
-            <div className="ticket-col reveal delay-3" data-audience="media" data-base="3050">
-              <div className="ticket-num">— Audience 03 —</div>
-              <div className="ticket-name">
+            <div className="tier-col reveal delay-3" data-audience="media" data-base="3050">
+              <div className="tier-num">— Audience 03 —</div>
+              <div className="tier-name">
                 Media &amp;<br />Creators
               </div>
-              <div className="ticket-tagline">
+              <div className="tier-tagline">
                 For journalists, podcasters, newsletter operators, and content creators covering
                 the consumer brand ecosystem.
               </div>
-              <div className="ticket-divider"></div>
+              <div className="tier-divider"></div>
               <div className="price-hero-label">Current rate</div>
               <div className="price-hero">
                 <span className="price-hero-now" data-now></span>
                 <span className="price-hero-base" data-base-display></span>
               </div>
-              <div className="ticket-divider"></div>
+              <div className="tier-divider"></div>
               <div className="price-ladder"></div>
               <a
-                className="ticket-btn"
+                className="tier-btn"
                 href="https://beanstalk26-registration.personatech.com/form/initiate?fId=YWE4ZTFhMDEtM2RhYi00NWU0LWI4NmEtNzUyYzUxMDY3OTM3"
               >
                 Apply now
               </a>
-              <div className="ticket-save" data-save></div>
+              <div className="tier-save" data-save></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ─────── FOOTER BAND ─────── */}
-      <section className="footer-band">
-        <div className="footer-band-inner">
-          <div className="footer-band-label">Looking for more?</div>
+      <section className="outro-band">
+        <div className="outro-band-inner">
+          <div className="outro-band-label">Looking for more?</div>
           <h3>
             Meetings, dinners,<br />
             <em>and the rest.</em>
@@ -389,7 +389,7 @@ export default function TicketsBody() {
             stages. Branded lounges. Reception co-hosts. The full sponsorship menu is available on
             request.
           </p>
-          <a href="https://forms.gle/PMu7eZQzrorGAsRL7" className="footer-band-link">
+          <a href="https://forms.gle/PMu7eZQzrorGAsRL7" className="outro-band-link">
             Apply to receive sponsorship options
           </a>
         </div>
