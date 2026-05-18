@@ -1,4 +1,5 @@
-import Nav from "@/components/Nav";
+import SiteNav from "@/components/SiteNav";
+import PartnerRibbon from "@/components/PartnerRibbon";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 
@@ -11,9 +12,10 @@ interface LegalPageProps {
 export default function LegalPage({ title, lastUpdated, children }: LegalPageProps) {
   return (
     <div style={{ background: "var(--cream)" }}>
-      <Nav />
+      <SiteNav />
+      <PartnerRibbon />
 
-      <header style={{ background: "#233c36", paddingTop: "100px" }}>
+      <header className="hero-bleed" style={{ background: "#233c36" }}>
         <div className="max-w-content mx-auto px-6 md:px-12 pb-12">
           <nav className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest mb-6" style={{ color: "#c7dccd", letterSpacing: "0.1em" }}>
             <Link href="/" style={{ color: "#c7dccd" }}>Beanstalk</Link>

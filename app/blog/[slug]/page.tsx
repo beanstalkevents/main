@@ -1,4 +1,5 @@
-import Nav from "@/components/Nav";
+import SiteNav from "@/components/SiteNav";
+import PartnerRibbon from "@/components/PartnerRibbon";
 import Footer from "@/components/Footer";
 import { blogPosts, getPostBySlug } from "@/lib/blog";
 import { notFound } from "next/navigation";
@@ -39,10 +40,11 @@ export default function BlogPostPage({
 
   return (
     <div style={{ background: "var(--cream)" }}>
-      <Nav />
+      <SiteNav />
+      <PartnerRibbon />
 
       {/* HERO */}
-      <header className="relative" style={{ background: "#233c36", paddingTop: "120px" }}>
+      <header className="relative hero-bleed" style={{ background: "#233c36" }}>
         <div className="max-w-content mx-auto px-6 md:px-12 pb-16">
           <nav className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest mb-8" style={{ color: "#c7dccd", letterSpacing: "0.1em" }}>
             <Link href="/" style={{ color: "#c7dccd" }}>Beanstalk</Link>

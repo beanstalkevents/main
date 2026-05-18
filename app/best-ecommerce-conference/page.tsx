@@ -1,4 +1,5 @@
-import Nav from "@/components/Nav";
+import SiteNav from "@/components/SiteNav";
+import PartnerRibbon from "@/components/PartnerRibbon";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 
@@ -90,10 +91,11 @@ const reasons = [
 export default function BestEcommerceConferencePage() {
   return (
     <div style={{ background: "var(--cream)" }}>
-      <Nav />
+      <SiteNav />
+      <PartnerRibbon />
 
       {/* HERO */}
-      <header style={{ background: "#233c36", paddingTop: "120px" }}>
+      <header className="hero-bleed" style={{ background: "#233c36" }}>
         <div className="max-w-content mx-auto px-6 md:px-12 pb-16">
           <div className="inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1 mb-6" style={{ background: "#cdf765", color: "#233c36", letterSpacing: "0.14em" }}>
             2026 Guide

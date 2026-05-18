@@ -167,7 +167,7 @@ export default function TicketsBody() {
   return (
     <>
       {/* ─────── INVITATION CARD ─────── */}
-      <section className="invite-page">
+      <section className="invite-page hero-bleed">
         <div className="invite-card">
           <div className="invite-monogram">
             <div className="invite-monogram-sprout">🌱</div>
