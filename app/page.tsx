@@ -200,7 +200,7 @@ export default function HomePage() {
             {whatToExpect.map((item) => (
               <div key={item.num} className="p-7 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)" }}>
                 <div className="flex items-center gap-3">
-                  <span className="text-xs font-semibold" style={{ color: "#cdf765", fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif" fontWeight: 700, }}>{item.num}</span>
+                  <span className="text-xs font-semibold" style={{ color: "#cdf765", fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, }}>{item.num}</span>
                   <span className="text-2xl">{item.icon}</span>
                 </div>
                 <h3 style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, fontSize: "18px", color: "#fcf9ec" }}>{item.title}</h3>
@@ -270,7 +270,7 @@ export default function HomePage() {
             ].map((s) => (
               <div key={s.tier} className="flex items-center justify-between px-5 py-4" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}>
                 <div>
-                  <div className="text-sm font-semibold mb-0.5" style={{ color: "#fcf9ec", fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif" fontWeight: 700, }}>{s.tier}</div>
+                  <div className="text-sm font-semibold mb-0.5" style={{ color: "#fcf9ec", fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, }}>{s.tier}</div>
                   <div className="text-xs" style={{ color: "#c7dccd" }}>{s.desc}</div>
                 </div>
                 <span style={{ color: "#cdf765" }}>→</span>

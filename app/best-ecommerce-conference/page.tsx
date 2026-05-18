@@ -162,7 +162,7 @@ export default function BestEcommerceConferencePage() {
                       background: conf.highlight ? "rgba(205,247,101,0.07)" : "transparent",
                     }}
                   >
-                    <td className="py-4 px-4 font-semibold" style={{ color: conf.highlight ? "#cdf765" : "#fcf9ec", fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif" fontWeight: 700, }}>
+                    <td className="py-4 px-4 font-semibold" style={{ color: conf.highlight ? "#cdf765" : "#fcf9ec", fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, }}>
                       {conf.name} {conf.highlight && "⭐"}
                     </td>
                     <td className="py-4 px-4" style={{ color: "#c7dccd" }}>{conf.location}</td>
@@ -188,7 +188,7 @@ export default function BestEcommerceConferencePage() {
           <div className="grid md:grid-cols-2 gap-px" style={{ border: "1px solid var(--beige)" }}>
             {reasons.map((r) => (
               <div key={r.num} className="p-7 flex flex-col gap-3" style={{ background: "#fcf9ec" }}>
-                <span className="text-xs font-semibold" style={{ color: "#ba9e6e", fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif" fontWeight: 700, }}>{r.num}</span>
+                <span className="text-xs font-semibold" style={{ color: "#ba9e6e", fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, }}>{r.num}</span>
                 <h3 style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, fontSize: "18px", color: "#233c36" }}>{r.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: "#4a4a4a" }}>{r.desc}</p>
               </div>
