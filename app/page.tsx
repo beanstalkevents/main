@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
 import AttendeesCarousel from "@/components/AttendeesCarousel";
 import Countdown from "@/components/Countdown";
+import PartnersSection from "@/components/PartnersSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -112,7 +113,7 @@ const verticals = [
 export default function HomePage() {
   return (
     <div style={{ background: "var(--cream)" }}>
-      <SiteNav />
+      <SiteNav variant="hero" />
       <PartnerRibbon />
 
       {/* HERO */}
@@ -219,32 +220,8 @@ export default function HomePage() {
       {/* ATTENDEES */}
       <AttendeesCarousel />
 
-      {/* SPEAK */}
-      <section id="speak" style={{ background: "#fcf9ec" }}>
-        <div className="max-w-content mx-auto px-6 md:px-12 py-20 grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <div className="section-label">Apply</div>
-            <h2 className="mb-5" style={{ fontFamily: "var(--font-serif), 'Iowan Old Style', Georgia, serif", fontWeight: 700, fontSize: "clamp(28px, 4vw, 44px)", color: "#233c36", lineHeight: 1.1 }}>
-              Speak at Beanstalk
-            </h2>
-            <p className="text-base leading-relaxed mb-8" style={{ color: "#4a4a4a" }}>
-              We curate every speaker. If you have something genuinely useful to share with the DTC and retail community, we want to hear from you. No pitches. No fluff.
-            </p>
-            <a href="https://speak.beanstalksummit.com" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase px-5 py-3"
-              style={{ background: "#233c36", color: "#cdf765", letterSpacing: "0.08em" }}>
-              Apply to Speak →
-            </a>
-          </div>
-          <div className="p-8 flex flex-col gap-0" style={{ background: "#233c36", border: "1px solid rgba(255,255,255,0.08)" }}>
-            {["Boardroom Discussions (15–25 people)", "Teardown Sessions", "Table Talks (5–6 people)", "Main Stage (select speakers)"].map((format) => (
-              <div key={format} className="flex items-center gap-3 py-4 border-b text-sm" style={{ borderColor: "rgba(255,255,255,0.08)", color: "#c7dccd" }}>
-                <span style={{ color: "#cdf765" }}>✓</span>{format}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* PARTNERS */}
+      <PartnersSection />
 
       {/* SPONSOR */}
       <section id="sponsor" style={{ background: "#233c36" }}>

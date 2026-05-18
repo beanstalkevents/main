@@ -12,7 +12,7 @@ interface LegalPageProps {
 export default function LegalPage({ title, lastUpdated, children }: LegalPageProps) {
   return (
     <div style={{ background: "var(--cream)" }}>
-      <SiteNav />
+      <SiteNav variant="solid" />
       <PartnerRibbon />
 
       <header className="hero-bleed" style={{ background: "#233c36" }}>

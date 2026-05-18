@@ -12,13 +12,16 @@ const NAV_LINKS = [
   { label: "Sponsor", href: "/#sponsor" },
 ];
 
-export default function SiteNav() {
+type SiteNavProps = { variant?: "hero" | "solid" };
+
+export default function SiteNav({ variant = "solid" }: SiteNavProps) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const ticking = useRef(false);
 
   useEffect(() => {
+    if (variant !== "hero") return;
     const onScroll = () => {
       if (ticking.current) return;
       ticking.current = true;
@@ -30,7 +33,7 @@ export default function SiteNav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [variant]);
 
   const isActive = (href: string) => {
     if (href.startsWith("/#")) return false;
@@ -41,7 +44,7 @@ export default function SiteNav() {
   return (
     <>
       <nav
-        className={`site-nav${scrolled ? " scrolled" : ""}`}
+        className={`site-nav${variant === "solid" ? " solid" : ""}${scrolled ? " scrolled" : ""}`}
         aria-label="Primary"
       >
         <Link className="site-nav-logo" href="/">
