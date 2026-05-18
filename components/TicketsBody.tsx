@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import AttendeesCarousel from "@/components/AttendeesCarousel";
 
 export default function TicketsBody() {
   useEffect(() => {
@@ -240,38 +241,7 @@ export default function TicketsBody() {
       </section>
 
       {/* ─────── WHO'S IN THE ROOM ─────── */}
-      <section className="roomstrip">
-        <div className="roomstrip-inner">
-          <div className="roomstrip-label">A partial guest list</div>
-          <h2>
-            Who&rsquo;s in the <em>room.</em>
-          </h2>
-          <div className="roomstrip-names">
-            <div className="name">Jennifer Hyman <em>Rent the Runway</em></div>
-            <div className="name">David Heath <em>Bombas</em></div>
-            <div className="name">Sean Frank <em>Ridge</em></div>
-            <div className="name">Abhi Ramesh <em>Misfits Market</em></div>
-            <div className="name">Jordan Nathan <em>Caraway</em></div>
-            <div className="name">Eric Grossberg <em>Brilliant Earth</em></div>
-            <div className="name">Ben Diamond <em>True Classic</em></div>
-            <div className="name">Aman Advani <em>Ministry of Supply</em></div>
-            <div className="name">Hillary Peterson <em>True Botanicals</em></div>
-            <div className="name">Aurelian Lis <em>Dermalogica</em></div>
-            <div className="name">Gonzalve Bich <em>BIC</em></div>
-            <div className="name">Eline de Graaf <em>Dyson</em></div>
-            <div className="name">Adam Goldston <em>APL</em></div>
-            <div className="name">Jacob Zuppke <em>Whisker</em></div>
-            <div className="name">Greg Sewitz <em>Magic Spoon</em></div>
-            <div className="name">Mary van Praag <em>Milani</em></div>
-            <div className="name">Brian Berger <em>Mack Weldon</em></div>
-            <div className="name">Andrew Perlmutter <em>NBA Take-Two</em></div>
-            <div className="name">Julie Bornstein <em>Daydream</em></div>
-            <div className="name">Ann Chung <em>Blackstone</em></div>
-            <div className="name">Jon Owsley <em>L Catterton</em></div>
-            <div className="name">+ 950 others</div>
-          </div>
-        </div>
-      </section>
+      <AttendeesCarousel />
 
       {/* ─────── TRANSITION ─────── */}
       <section className="transition" id="pricing">

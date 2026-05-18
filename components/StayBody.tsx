@@ -235,7 +235,22 @@ export default function StayBody() {
                 </a>
               </div>
               <div>
-                <div className="meta-item-label">Beanstalk rate</div>
+                <div className="meta-item-label">
+                  Beanstalk rate
+                  <span
+                    className="rate-info"
+                    tabIndex={0}
+                    aria-label="Booking details"
+                  >
+                    i
+                    <span className="rate-info-tip" role="tooltip">
+                      <strong>Group rate for Beanstalk 2026.</strong> Booking
+                      window: Sept 12 – Sept 16, 2026 (4 nights). Last day to
+                      book at this rate: <strong>Friday, August 21, 2026</strong>.
+                      Rate inclusive of all standard hotel fees.
+                    </span>
+                  </span>
+                </div>
                 <div className="meta-item-value">
                   <em>$695</em> / night<br />
                   <span className="strike">$935</span>{" "}
@@ -278,7 +293,24 @@ export default function StayBody() {
                 </a>
               </div>
               <div>
-                <div className="meta-item-label">Beanstalk rate</div>
+                <div className="meta-item-label">
+                  Beanstalk rate
+                  <span
+                    className="rate-info"
+                    tabIndex={0}
+                    aria-label="Booking details"
+                  >
+                    i
+                    <span className="rate-info-tip" role="tooltip">
+                      <strong>Group rate for Beanstalk 2026.</strong> Booking
+                      window: Sept 12 – Sept 16, 2026. Last day to book at this
+                      rate: <strong>Friday, August 21, 2026</strong>.{" "}
+                      <strong>Destination Fee waived</strong> — it may show at
+                      booking due to Marriott&rsquo;s system, but our team
+                      removes it at check-out.
+                    </span>
+                  </span>
+                </div>
                 <div className="meta-item-value">
                   <em>$389</em> / night<br />
                   <span className="strike">$589</span>{" "}
@@ -288,9 +320,11 @@ export default function StayBody() {
               </div>
             </div>
             <a
-              href="https://www.marriott.com/en-us/hotels/nycox-moxy-nyc-downtown/overview/"
+              href="https://app.marriott.com/reslink?id=1779136733533&key=GRP&app=resvlink"
               className="hotel-cta"
               data-hotel="moxy"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <span className="cta-label">Book by August 21</span>
               <span className="cta-arrow">→</span>

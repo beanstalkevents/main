@@ -122,20 +122,50 @@ export default function AttendeesCarousel() {
 
   return (
     <section id="attendees" style={{ background: "#233c36" }}>
-      <div className="max-w-content mx-auto px-6 md:px-12 pt-20 pb-10">
-        <div className="section-label dark">Past attendees</div>
-        <h2
-          className="mb-4"
+      <div
+        className="max-w-content mx-auto px-6 md:px-12 pt-20 pb-10"
+        style={{ textAlign: "center" }}
+      >
+        <div
           style={{
-            fontFamily: "var(--font-serif), 'Iowan Old Style', Georgia, serif", fontWeight: 700,
-            fontSize: "clamp(28px, 4vw, 44px)",
-            color: "#fcf9ec",
+            fontFamily: "var(--font-sans)",
+            fontSize: "10px",
+            fontWeight: 700,
+            letterSpacing: "0.22em",
+            textTransform: "uppercase",
+            color: "var(--tan)",
+            marginBottom: "14px",
           }}
         >
-          Who&apos;s Coming
+          — Confirmed attendees —
+        </div>
+        <h2
+          style={{
+            fontFamily: "var(--font-serif)",
+            fontWeight: 700,
+            fontSize: "clamp(34px, 4.5vw, 52px)",
+            lineHeight: 1.05,
+            color: "#fcf9ec",
+            marginBottom: "16px",
+            fontVariationSettings: "'opsz' 72",
+          }}
+        >
+          Who&rsquo;s in the{" "}
+          <em style={{ fontStyle: "italic", color: "#cdf765" }}>room.</em>
         </h2>
-        <p className="text-base mb-2" style={{ color: "#c7dccd" }}>
-          1,000+ founders and senior executives from the world&apos;s most innovative consumer brands.
+        <p
+          style={{
+            fontFamily: "var(--font-serif)",
+            fontStyle: "italic",
+            fontSize: "clamp(16px, 1.4vw, 18px)",
+            lineHeight: 1.55,
+            color: "rgba(252,249,236,0.7)",
+            maxWidth: "560px",
+            margin: "0 auto",
+            fontVariationSettings: "'opsz' 14",
+          }}
+        >
+          1,000+ founders and senior executives from the world&rsquo;s most innovative consumer brands.
         </p>
       </div>
 
