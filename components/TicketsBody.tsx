@@ -151,9 +151,16 @@ export default function TicketsBody() {
       document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
     }
 
+    // Safety net: if anything stays hidden (browser quirk, observer race,
+    // hash-link landing past the section, etc.), force-reveal after 1.5s.
+    const fallback = window.setTimeout(() => {
+      document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
+    }, 1500);
+
     return () => {
       seePricingBtn?.removeEventListener("click", onPricingClick);
       io?.disconnect();
+      window.clearTimeout(fallback);
     };
   }, []);
 
