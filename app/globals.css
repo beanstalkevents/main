@@ -727,11 +727,17 @@ h1, h2, h3, h4 {
     pointer-events: none;
     z-index: 2;
   }
-  /* Soft brand tint */
+  /* Soft brand tint — gradient deepens around the headline band for legibility on lighter scenes */
   .stay-page .video-tint {
     position: absolute;
     inset: 0;
-    background: rgba(35, 60, 54, 0.08);
+    background:
+      linear-gradient(
+        180deg,
+        rgba(35, 60, 54, 0.05) 0%,
+        rgba(35, 60, 54, 0.10) 50%,
+        rgba(35, 60, 54, 0.05) 100%
+      );
     mix-blend-mode: multiply;
     pointer-events: none;
     z-index: 1;
