@@ -235,22 +235,7 @@ export default function StayBody() {
                 </a>
               </div>
               <div>
-                <div className="meta-item-label">
-                  Beanstalk rate
-                  <span
-                    className="rate-info"
-                    tabIndex={0}
-                    aria-label="Booking details"
-                  >
-                    i
-                    <span className="rate-info-tip" role="tooltip">
-                      <strong>Group rate for Beanstalk 2026.</strong> Booking
-                      window: Sept 12 – Sept 16, 2026 (4 nights). Last day to
-                      book at this rate: <strong>Friday, August 21, 2026</strong>.
-                      Rate inclusive of all standard hotel fees.
-                    </span>
-                  </span>
-                </div>
+                <div className="meta-item-label">Beanstalk rate</div>
                 <div className="meta-item-value">
                   <em>$695</em> / night<br />
                   <span className="strike">$935</span>{" "}
