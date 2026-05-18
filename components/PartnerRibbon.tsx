@@ -1,4 +1,4 @@
-import { PARTNERS } from "@/lib/partners";
+import { featuredPartners } from "@/lib/partners";
 
 export default function PartnerRibbon() {
   return (
@@ -10,11 +10,11 @@ export default function PartnerRibbon() {
             className="partner-ribbon-group"
             aria-hidden={g === 1 ? "true" : undefined}
           >
-            {PARTNERS.map((p, i) => (
+            {featuredPartners.map((p, i) => (
               <span key={`${p.name}-${g}-${i}`} className="partner-ribbon-cell">
                 <a
                   className={`partner-ribbon-item${p.lead ? " lead" : ""}`}
-                  href={p.href}
+                  href={`/partners/${p.slug}`}
                   tabIndex={g === 1 ? -1 : undefined}
                 >
                   <span className="partner-ribbon-role">{p.role}</span>

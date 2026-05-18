@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
 import AttendeesCarousel from "@/components/AttendeesCarousel";
 import Countdown from "@/components/Countdown";
-import PartnersSection from "@/components/PartnersSection";
+import PartnersUnifiedSection from "@/components/PartnersUnifiedSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -270,7 +270,7 @@ export default function HomePage() {
       <AttendeesCarousel />
 
       {/* PARTNERS */}
-      <PartnersSection />
+      <PartnersUnifiedSection />
 
       {/* SPONSOR */}
       <section id="sponsor" style={{ background: "#233c36" }}>
