@@ -20,8 +20,14 @@ const config: Config = {
         "near-black": "#141414",
       },
       fontFamily: {
-        spirit: ["var(--font-spirit)", "Georgia", "serif"],
-        afacad: ["var(--font-afacad)", "system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "'Iowan Old Style'", "Georgia", "serif"],
+        sans: [
+          "var(--font-sans)",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "'Helvetica Neue'",
+          "sans-serif",
+        ],
       },
       maxWidth: {
         content: "1100px",

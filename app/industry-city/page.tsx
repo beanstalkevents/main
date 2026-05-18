@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const EYEBROW: React.CSSProperties = {
-  fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+  fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif",
   fontSize: "10px",
   letterSpacing: "0.42em",
   textTransform: "none",
@@ -18,7 +18,7 @@ const EYEBROW: React.CSSProperties = {
 };
 
 const BIG_HEADLINE: React.CSSProperties = {
-  fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
+  fontFamily: "var(--font-serif), 'Iowan Old Style', Georgia, serif",
   fontSize: "clamp(2.75rem, 7vw, 6rem)",
   fontWeight: 700,
   lineHeight: 1.0,
@@ -28,7 +28,7 @@ const BIG_HEADLINE: React.CSSProperties = {
 };
 
 const ITALIC_EM: React.CSSProperties = {
-  fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+  fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif",
   fontStyle: "italic",
   fontWeight: 400,
   textTransform: "none",
@@ -44,7 +44,7 @@ const CHAPTER_NUM: React.CSSProperties = {
 };
 
 const CHAPTER_TITLE: React.CSSProperties = {
-  fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
+  fontFamily: "var(--font-serif), 'Iowan Old Style', Georgia, serif",
   fontSize: "clamp(1.8rem, 4vw, 3rem)",
   fontWeight: 700,
   lineHeight: 1.05,
@@ -54,7 +54,7 @@ const CHAPTER_TITLE: React.CSSProperties = {
 };
 
 const CHAPTER_SUB: React.CSSProperties = {
-  fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+  fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif",
   fontStyle: "italic",
   fontWeight: 400,
   fontSize: "clamp(1.05rem, 1.6vw, 1.35rem)",
@@ -64,7 +64,7 @@ const CHAPTER_SUB: React.CSSProperties = {
 };
 
 const BODY_P: React.CSSProperties = {
-  fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+  fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif",
   fontSize: "1.05rem",
   lineHeight: 1.7,
   margin: 0,
@@ -105,7 +105,7 @@ export default function IndustryCityPage() {
         >
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
             <span style={{ ...EYEBROW, color: "#cdf765", opacity: 0.75 }}>Chapter №2</span>
-            <span style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif", fontStyle: "italic", fontSize: "0.95rem", color: "rgba(252,249,236,0.55)" }}>
+            <span style={{ fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif", fontStyle: "italic", fontSize: "0.95rem", color: "rgba(252,249,236,0.55)" }}>
               September 14–16, 2026
             </span>
           </div>
@@ -118,7 +118,7 @@ export default function IndustryCityPage() {
             <div style={{ width: "80px", height: "1px", background: "rgba(252,249,236,0.35)", margin: "2.5rem 0 1.75rem" }} />
             <p
               style={{
-                fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+                fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif",
                 fontStyle: "italic",
                 fontSize: "1.2rem",
                 lineHeight: 1.55,
@@ -141,7 +141,7 @@ export default function IndustryCityPage() {
               }}
             >
               <span style={{ ...EYEBROW, color: "rgba(252,249,236,0.55)" }}>571 2nd Ave · Brooklyn NY</span>
-              <span style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif", fontStyle: "italic", fontSize: "0.95rem", color: "rgba(252,249,236,0.55)" }}>
+              <span style={{ fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif", fontStyle: "italic", fontSize: "0.95rem", color: "rgba(252,249,236,0.55)" }}>
                 Courtyard 7/8 gates
               </span>
             </div>
@@ -163,7 +163,7 @@ export default function IndustryCityPage() {
         >
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
             <span style={{ ...EYEBROW, color: "var(--tan)" }}>The Venue</span>
-            <span style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif", fontStyle: "italic", fontSize: "0.95rem", color: "rgba(35,60,54,0.55)" }}>
+            <span style={{ fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif", fontStyle: "italic", fontSize: "0.95rem", color: "rgba(35,60,54,0.55)" }}>
               Brooklyn, NY
             </span>
           </div>
@@ -176,7 +176,7 @@ export default function IndustryCityPage() {
             <div style={{ width: "80px", height: "1px", background: "var(--beige)", margin: "2.5rem 0 1.75rem" }} />
             <p
               style={{
-                fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+                fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif",
                 fontStyle: "italic",
                 fontSize: "1.2rem",
                 lineHeight: 1.55,
@@ -209,7 +209,7 @@ export default function IndustryCityPage() {
               >
                 Open in Maps →
               </a>
-              <span style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif", fontStyle: "italic", fontSize: "0.95rem", color: "rgba(35,60,54,0.55)" }}>
+              <span style={{ fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif", fontStyle: "italic", fontSize: "0.95rem", color: "rgba(35,60,54,0.55)" }}>
                 33rd – 34th St
               </span>
             </div>
@@ -231,7 +231,7 @@ export default function IndustryCityPage() {
             Where to find
             <em
               style={{
-                fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+                fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif",
                 fontStyle: "italic",
                 fontWeight: 400,
                 textTransform: "none",
@@ -280,7 +280,7 @@ export default function IndustryCityPage() {
           A great industrial
           <em
             style={{
-              fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+              fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif",
               fontStyle: "italic",
               fontWeight: 400,
               textTransform: "none",
@@ -306,7 +306,7 @@ export default function IndustryCityPage() {
           </p>
           <p
             style={{
-              fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+              fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif",
               fontSize: "clamp(1.1rem, 1.8vw, 1.35rem)",
               lineHeight: 1.55,
               color: "rgba(252,249,236,0.95)",
@@ -329,7 +329,7 @@ export default function IndustryCityPage() {
           Industry city
           <em
             style={{
-              fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+              fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif",
               fontStyle: "italic",
               fontWeight: 400,
               textTransform: "none",
@@ -375,7 +375,7 @@ export default function IndustryCityPage() {
             { v: "6M sq ft", l: "Industrial floor space" },
           ].map((s, i) => (
             <div key={i} style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-              <strong style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, fontSize: "clamp(1.4rem, 2.6vw, 2rem)", color: "#fcf9ec", lineHeight: 1 }}>{s.v}</strong>
+              <strong style={{ fontFamily: "var(--font-serif), 'Iowan Old Style', Georgia, serif", fontWeight: 700, fontSize: "clamp(1.4rem, 2.6vw, 2rem)", color: "#fcf9ec", lineHeight: 1 }}>{s.v}</strong>
               <span style={{ ...EYEBROW, color: "#cdf765", opacity: 0.7 }}>{s.l}</span>
             </div>
           ))}
@@ -386,7 +386,7 @@ export default function IndustryCityPage() {
       <section style={{ background: "#cdf765" }}>
         <div className="max-w-content mx-auto px-6 md:px-12" style={{ padding: "4rem 2rem", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "1.5rem" }}>
           <span style={{ ...EYEBROW, color: "#233c36", opacity: 0.7 }}>RSVP</span>
-          <p style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, color: "#233c36", fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)", lineHeight: 1.15, maxWidth: "640px" }}>
+          <p style={{ fontFamily: "var(--font-serif), 'Iowan Old Style', Georgia, serif", fontWeight: 700, color: "#233c36", fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)", lineHeight: 1.15, maxWidth: "640px" }}>
             See you in Brooklyn &mdash; September 14&ndash;16, 2026.
           </p>
           <a

@@ -98,7 +98,7 @@ export default function BestEcommerceConferencePage() {
           <div className="inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1 mb-6" style={{ background: "#cdf765", color: "#233c36", letterSpacing: "0.14em" }}>
             2026 Guide
           </div>
-          <h1 className="mb-5" style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, fontSize: "clamp(40px, 6vw, 78px)", color: "#fcf9ec", lineHeight: 1.0, maxWidth: "840px" }}>
+          <h1 className="mb-5" style={{ fontFamily: "var(--font-serif), 'Iowan Old Style', Georgia, serif", fontWeight: 700, fontSize: "clamp(40px, 6vw, 78px)", color: "#fcf9ec", lineHeight: 1.0, maxWidth: "840px" }}>
             The Best Ecommerce Conferences in 2026
           </h1>
           <p className="text-lg leading-relaxed mb-8" style={{ color: "#c7dccd", maxWidth: "580px" }}>
@@ -118,7 +118,7 @@ export default function BestEcommerceConferencePage() {
       <section style={{ background: "#fcf9ec" }}>
         <div className="max-w-content mx-auto px-6 md:px-12 py-16" style={{ maxWidth: "760px" }}>
           <div className="section-label">Overview</div>
-          <h2 className="mb-5" style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, fontSize: "clamp(26px, 3.5vw, 38px)", color: "#233c36" }}>
+          <h2 className="mb-5" style={{ fontFamily: "var(--font-serif), 'Iowan Old Style', Georgia, serif", fontWeight: 700, fontSize: "clamp(26px, 3.5vw, 38px)", color: "#233c36" }}>
             What makes an ecommerce conference worth attending?
           </h2>
           <div className="flex flex-col gap-4 text-base leading-relaxed" style={{ color: "#4a4a4a" }}>
@@ -139,7 +139,7 @@ export default function BestEcommerceConferencePage() {
       <section style={{ background: "#233c36" }}>
         <div className="max-w-content mx-auto px-6 md:px-12 py-16">
           <div className="section-label dark">Comparison</div>
-          <h2 className="mb-10" style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, fontSize: "clamp(26px, 3.5vw, 40px)", color: "#fcf9ec" }}>
+          <h2 className="mb-10" style={{ fontFamily: "var(--font-serif), 'Iowan Old Style', Georgia, serif", fontWeight: 700, fontSize: "clamp(26px, 3.5vw, 40px)", color: "#fcf9ec" }}>
             2026 Ecommerce Conference Comparison
           </h2>
           <div className="overflow-x-auto">
@@ -162,7 +162,7 @@ export default function BestEcommerceConferencePage() {
                       background: conf.highlight ? "rgba(205,247,101,0.07)" : "transparent",
                     }}
                   >
-                    <td className="py-4 px-4 font-semibold" style={{ color: conf.highlight ? "#cdf765" : "#fcf9ec", fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, }}>
+                    <td className="py-4 px-4 font-semibold" style={{ color: conf.highlight ? "#cdf765" : "#fcf9ec", fontFamily: "var(--font-serif), 'Iowan Old Style', Georgia, serif", fontWeight: 700, }}>
                       {conf.name} {conf.highlight && "⭐"}
                     </td>
                     <td className="py-4 px-4" style={{ color: "#c7dccd" }}>{conf.location}</td>
@@ -182,14 +182,14 @@ export default function BestEcommerceConferencePage() {
       <section style={{ background: "#fcf9ec" }}>
         <div className="max-w-content mx-auto px-6 md:px-12 py-16">
           <div className="section-label">Why Beanstalk</div>
-          <h2 className="mb-10" style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, fontSize: "clamp(26px, 3.5vw, 40px)", color: "#233c36" }}>
+          <h2 className="mb-10" style={{ fontFamily: "var(--font-serif), 'Iowan Old Style', Georgia, serif", fontWeight: 700, fontSize: "clamp(26px, 3.5vw, 40px)", color: "#233c36" }}>
             Why Beanstalk tops the list for DTC brands
           </h2>
           <div className="grid md:grid-cols-2 gap-px" style={{ border: "1px solid var(--beige)" }}>
             {reasons.map((r) => (
               <div key={r.num} className="p-7 flex flex-col gap-3" style={{ background: "#fcf9ec" }}>
-                <span className="text-xs font-semibold" style={{ color: "#ba9e6e", fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, }}>{r.num}</span>
-                <h3 style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, fontSize: "18px", color: "#233c36" }}>{r.title}</h3>
+                <span className="text-xs font-semibold" style={{ color: "#ba9e6e", fontFamily: "var(--font-serif), 'Iowan Old Style', Georgia, serif", fontWeight: 700, }}>{r.num}</span>
+                <h3 style={{ fontFamily: "var(--font-serif), 'Iowan Old Style', Georgia, serif", fontWeight: 700, fontSize: "18px", color: "#233c36" }}>{r.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: "#4a4a4a" }}>{r.desc}</p>
               </div>
             ))}
@@ -200,7 +200,7 @@ export default function BestEcommerceConferencePage() {
       {/* SOCIAL PROOF PULL QUOTE */}
       <div style={{ background: "#cdf765" }}>
         <div className="max-w-content mx-auto px-6 md:px-12 py-12 flex flex-col gap-4">
-          <p style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, fontSize: "clamp(20px, 3vw, 32px)", color: "#233c36", lineHeight: 1.2, maxWidth: "700px" }}>
+          <p style={{ fontFamily: "var(--font-serif), 'Iowan Old Style', Georgia, serif", fontWeight: 700, fontSize: "clamp(20px, 3vw, 32px)", color: "#233c36", lineHeight: 1.2, maxWidth: "700px" }}>
             &ldquo;Beanstalk is basically the mecca right now for merchants, builders, entrepreneurs, and Shopify app partners.&rdquo;
           </p>
           <p className="text-sm font-semibold" style={{ color: "#315c52" }}>

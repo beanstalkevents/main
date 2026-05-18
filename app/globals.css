@@ -2,27 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
-  src: url("/fonts/NewSpiritBold.otf") format("opentype");
-  font-weight: 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  src: url("/fonts/Afacad-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  src: url("/fonts/Afacad-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-display: swap;
-}
-
 :root {
   --dark-green: #233c36;
   --mid-green: #315c52;
@@ -40,11 +19,19 @@ html { scroll-behavior: smooth; }
 body {
   background-color: var(--cream);
   color: var(--near-black);
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif; font-weight: 700; }
+h1, h2, h3, h4 {
+  font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
+  font-weight: 700;
+  font-variation-settings: 'opsz' 72;
+}
+
+/* Newsreader optical-size utilities */
+.display-serif { font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif; font-variation-settings: 'opsz' 72; }
+.body-serif { font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif; font-variation-settings: 'opsz' 14; }
 
 .section-label {
   font-size: 10px;
@@ -200,7 +187,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
 
   .invite-formal {
     text-align: center;
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-style: italic;
     font-size: 17px;
     color: var(--mid-green);
@@ -209,7 +196,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
   }
   .invite-headline {
     text-align: center;
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-weight: 700;
     font-size: clamp(48px, 7vw, 88px);
     line-height: 0.95;
@@ -227,13 +214,13 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     margin-bottom: 40px;
   }
   .invite-date {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-size: 24px;
     color: var(--dark-green);
     letter-spacing: 0.02em;
   }
   .invite-location {
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.22em;
@@ -244,7 +231,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
 
   .invite-body {
     text-align: center;
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-size: 18px;
     line-height: 1.7;
     color: #2a3a35;
@@ -277,7 +264,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     color: var(--tan);
   }
   .pathway-title {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-weight: 700;
     font-size: 22px;
     color: var(--dark-green);
@@ -285,7 +272,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
   }
   .pathway-title em { font-style: italic; }
   .pathway-desc {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-style: italic;
     font-size: 14px;
     color: var(--mid-green);
@@ -299,7 +286,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     background: var(--dark-green);
     color: var(--cream);
     padding: 12px 22px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     font-size: 11.5px;
     font-weight: 600;
     letter-spacing: 0.18em;
@@ -315,7 +302,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
 
   .invite-signoff {
     text-align: center;
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-style: italic;
     font-size: 15px;
     color: var(--tan);
@@ -346,7 +333,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     text-align: center;
   }
   .roomstrip h2 {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-weight: 700;
     font-size: clamp(34px, 4.5vw, 52px);
     line-height: 1.05;
@@ -358,7 +345,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
   .roomstrip-names {
     columns: 3;
     column-gap: 48px;
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-size: 16px;
     line-height: 1.85;
     color: var(--mint);
@@ -390,7 +377,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     margin-bottom: 18px;
   }
   .transition h2 {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-weight: 700;
     font-size: clamp(36px, 5vw, 56px);
     line-height: 1;
@@ -403,7 +390,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
   }
   .transition h2 em { font-style: italic; color: var(--mid-green); }
   .transition p {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-style: italic;
     font-size: 17px;
     color: var(--mid-green);
@@ -444,14 +431,14 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
   .ticket-col.featured .ticket-btn:hover { background: var(--cream); }
 
   .ticket-num {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-style: italic;
     font-size: 14px;
     color: var(--tan);
     letter-spacing: 0.05em;
   }
   .ticket-name {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-weight: 700;
     font-size: 26px;
     line-height: 1.1;
@@ -459,7 +446,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     color: var(--dark-green);
   }
   .ticket-tagline {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-style: italic;
     font-size: 14.5px;
     line-height: 1.55;
@@ -480,7 +467,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     flex-wrap: wrap;
   }
   .price-hero-now {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-weight: 700;
     font-size: 48px;
     line-height: 1;
@@ -489,7 +476,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
   }
   .ticket-col.featured .price-hero-now { color: var(--light-green); }
   .price-hero-base {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-size: 20px;
     color: var(--tan);
     text-decoration: line-through;
@@ -497,7 +484,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
   }
   .ticket-col.featured .price-hero-base { color: var(--mint); opacity: 0.55; }
   .price-hero-label {
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.18em;
@@ -545,7 +532,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     text-transform: uppercase;
   }
   .price-list-rung-amount {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-weight: 700;
     font-size: 16px;
     color: var(--dark-green);
@@ -559,7 +546,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
 
   /* — Save line under button — */
   .ticket-save {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-style: italic;
     font-size: 13px;
     color: var(--tan);
@@ -583,7 +570,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     background: var(--dark-green);
     color: var(--cream);
     padding: 14px 18px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     font-size: 11.5px;
     font-weight: 600;
     letter-spacing: 0.16em;
@@ -625,7 +612,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     padding-right: 16px;
   }
   .meetings-note-body {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-size: 15px;
     line-height: 1.6;
     color: #2a3a35;
@@ -635,7 +622,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     color: var(--mid-green);
     text-decoration: none;
     border-bottom: 1px solid var(--mint);
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.12em;
@@ -661,7 +648,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     margin-bottom: 20px;
   }
   .footer-band h3 {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-weight: 700;
     font-size: 36px;
     line-height: 1.05;
@@ -670,7 +657,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
   }
   .footer-band h3 em { font-style: italic; color: var(--light-green); }
   .footer-band p {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-style: italic;
     font-size: 17px;
     color: var(--mint);
@@ -683,7 +670,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     gap: 10px;
     color: var(--light-green);
     text-decoration: none;
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.18em;
@@ -763,7 +750,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
   }
   .stay-page .chrome-top > * { pointer-events: auto; }
   .stay-page .logotype {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-size: 22px;
     color: var(--cream);
     letter-spacing: -0.01em;
@@ -776,7 +763,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
   .stay-page .logotype em { font-style: italic; }
 
   .stay-page .chrome-eyebrow {
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     font-size: 10.5px;
     font-weight: 600;
     letter-spacing: 0.22em;
@@ -804,7 +791,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     background: none;
     border: none;
     color: var(--cream);
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     font-size: 10.5px;
     font-weight: 600;
     letter-spacing: 0.22em;
@@ -877,7 +864,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     max-width: 900px;
   }
   .stay-page .intro-eyebrow {
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.28em;
@@ -887,7 +874,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     margin-bottom: 28px;
   }
   .stay-page .intro-headline {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-weight: 700;
     font-size: clamp(56px, 8vw, 112px);
     line-height: 0.95;
@@ -897,7 +884,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
   }
   .stay-page .intro-headline em { font-style: italic; color: var(--light-green); }
   .stay-page .intro-deck {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-style: italic;
     font-size: clamp(18px, 1.8vw, 22px);
     line-height: 1.55;
@@ -908,7 +895,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
   }
   .stay-page .intro-scroll-cue {
     margin-top: 64px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.28em;
@@ -942,7 +929,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     max-width: 680px;
   }
   .stay-page .hotel-num {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-style: italic;
     font-size: 14px;
     color: var(--cream);
@@ -950,7 +937,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     letter-spacing: 0.05em;
   }
   .stay-page .hotel-name {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-weight: 700;
     font-size: clamp(64px, 9vw, 128px);
     line-height: 0.92;
@@ -968,7 +955,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     max-width: 560px;
   }
   .stay-page .meta-item-label {
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.22em;
@@ -978,7 +965,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     margin-bottom: 6px;
   }
   .stay-page .meta-item-value {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-size: 17px;
     color: var(--cream);
     line-height: 1.4;
@@ -998,7 +985,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
   }
   .stay-page .meta-item-value .save-pill {
     display: inline-block;
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     font-size: 9.5px;
     font-weight: 700;
     letter-spacing: 0.16em;
@@ -1027,7 +1014,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
   .stay-page .meta-link-cue {
     display: block;
     margin-top: 8px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.18em;
@@ -1051,7 +1038,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     background: var(--cream);
     color: var(--dark-green);
     padding: 22px 32px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.18em;
@@ -1164,7 +1151,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     max-width: 720px;
   }
   .stay-page .outro-headline {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-weight: 700;
     font-size: clamp(40px, 5vw, 64px);
     line-height: 1;
@@ -1174,7 +1161,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
   }
   .stay-page .outro-headline em { font-style: italic; color: var(--light-green); }
   .stay-page .outro-deck {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: var(--font-serif), 'Iowan Old Style', Georgia, serif;
     font-style: italic;
     font-size: 18px;
     line-height: 1.6;
@@ -1188,7 +1175,7 @@ h1, h2, h3, h4 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Anti
     gap: 10px;
     color: var(--cream);
     text-decoration: none;
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     font-size: 11.5px;
     font-weight: 600;
     letter-spacing: 0.22em;

@@ -196,7 +196,7 @@ function CardEl({
         >
           <p
             style={{
-              fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+              fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif",
               fontStyle: "italic",
               color: "#fcf9ec",
               fontSize: "14px",
@@ -223,7 +223,7 @@ function CardEl({
       >
         <div
           style={{
-            fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700,
+            fontFamily: "var(--font-serif), 'Iowan Old Style', Georgia, serif", fontWeight: 700,
             color: "#cdf765",
             fontSize: "16px",
             lineHeight: 1.2,
@@ -234,7 +234,7 @@ function CardEl({
         </div>
         <div
           style={{
-            fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+            fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif",
             color: "#ffffff",
             fontSize: "12px",
             opacity: 0.88,
@@ -549,7 +549,7 @@ export default function Testimonials() {
         <div className="section-label">Social proof</div>
         <h2
           style={{
-            fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700,
+            fontFamily: "var(--font-serif), 'Iowan Old Style', Georgia, serif", fontWeight: 700,
             fontSize: "clamp(28px, 4vw, 44px)",
             color: "#233c36",
             lineHeight: 1.1,
