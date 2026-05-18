@@ -1,4 +1,5 @@
-import Nav from "@/components/Nav";
+import SiteNav from "@/components/SiteNav";
+import PartnerRibbon from "@/components/PartnerRibbon";
 import Footer from "@/components/Footer";
 import ParallaxChapter from "@/components/ParallaxChapter";
 import type { Metadata } from "next";
@@ -79,7 +80,8 @@ const HAIR_RULE = (color = "rgba(35,60,54,0.16)"): React.CSSProperties => ({
 export default function IndustryCityPage() {
   return (
     <div style={{ background: "var(--cream)", color: "#233c36" }}>
-      <Nav />
+      <SiteNav />
+      <PartnerRibbon />
 
       {/* HERO — split screen ink/cream */}
       <section
@@ -89,7 +91,7 @@ export default function IndustryCityPage() {
           minHeight: "100vh",
           paddingTop: "0",
         }}
-        className="ic-hero"
+        className="ic-hero hero-bleed"
       >
         {/* LEFT PANEL (dark) */}
         <div

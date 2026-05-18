@@ -1,4 +1,5 @@
-import Nav from "@/components/Nav";
+import SiteNav from "@/components/SiteNav";
+import PartnerRibbon from "@/components/PartnerRibbon";
 import Footer from "@/components/Footer";
 import StayBody from "@/components/StayBody";
 import type { Metadata } from "next";
@@ -18,7 +19,8 @@ export const metadata: Metadata = {
 export default function StayPage() {
   return (
     <div style={{ background: "#0a0a0a", color: "#fcf9ec" }}>
-      <Nav />
+      <SiteNav />
+      <PartnerRibbon />
       <StayBody />
       <Footer />
     </div>

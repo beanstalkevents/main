@@ -1,4 +1,5 @@
-import Nav from "@/components/Nav";
+import SiteNav from "@/components/SiteNav";
+import PartnerRibbon from "@/components/PartnerRibbon";
 import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
 import AttendeesCarousel from "@/components/AttendeesCarousel";
@@ -111,10 +112,11 @@ const verticals = [
 export default function HomePage() {
   return (
     <div style={{ background: "var(--cream)" }}>
-      <Nav />
+      <SiteNav />
+      <PartnerRibbon />
 
       {/* HERO */}
-      <header id="hero" className="relative overflow-hidden" style={{ background: "#233c36", paddingTop: "120px", paddingBottom: 0 }}>
+      <header id="hero" className="hero-bleed relative overflow-hidden" style={{ background: "#233c36", paddingBottom: 0 }}>
         <video
           autoPlay
           muted

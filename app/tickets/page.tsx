@@ -1,4 +1,5 @@
-import Nav from "@/components/Nav";
+import SiteNav from "@/components/SiteNav";
+import PartnerRibbon from "@/components/PartnerRibbon";
 import Footer from "@/components/Footer";
 import TicketsBody from "@/components/TicketsBody";
 import type { Metadata } from "next";
@@ -12,7 +13,8 @@ export const metadata: Metadata = {
 export default function TicketsPage() {
   return (
     <div style={{ background: "var(--cream)" }}>
-      <Nav />
+      <SiteNav />
+      <PartnerRibbon />
       <div style={{ paddingTop: "64px" }}>
         <TicketsBody />
       </div>
