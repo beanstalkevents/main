@@ -1006,6 +1006,15 @@ h1, h2, h3, h4 {
     border-radius: 2px;
     vertical-align: 2px;
   }
+  .stay-page .meta-item-value .deadline-note {
+    display: block;
+    margin-top: 10px;
+    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--tan);
+    opacity: 0.85;
+  }
   .stay-page .meta-item-value em {
     font-style: italic;
     color: var(--light-green);

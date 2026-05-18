@@ -237,9 +237,10 @@ export default function StayBody() {
               <div>
                 <div className="meta-item-label">Beanstalk rate</div>
                 <div className="meta-item-value">
-                  <em>$469</em> / night<br />
-                  <span className="strike">$609</span>{" "}
-                  <span className="save-pill">Save 23%</span>
+                  <em>$695</em> / night<br />
+                  <span className="strike">$935</span>{" "}
+                  <span className="save-pill">Save 28%</span>
+                  <span className="deadline-note">Book by August 21, 2026</span>
                 </div>
               </div>
             </div>
@@ -248,7 +249,7 @@ export default function StayBody() {
               className="hotel-cta"
               data-hotel="beekman"
             >
-              <span className="cta-label">Book the Beekman</span>
+              <span className="cta-label">Book by August 21</span>
               <span className="cta-arrow">→</span>
             </a>
           </div>
@@ -279,9 +280,10 @@ export default function StayBody() {
               <div>
                 <div className="meta-item-label">Beanstalk rate</div>
                 <div className="meta-item-value">
-                  <em>$227</em> / night<br />
-                  <span className="strike">$295</span>{" "}
-                  <span className="save-pill">Save 23%</span>
+                  <em>$389</em> / night<br />
+                  <span className="strike">$589</span>{" "}
+                  <span className="save-pill">Save 34%</span>
+                  <span className="deadline-note">Book by August 21, 2026</span>
                 </div>
               </div>
             </div>
@@ -290,7 +292,7 @@ export default function StayBody() {
               className="hotel-cta"
               data-hotel="moxy"
             >
-              <span className="cta-label">Book the Moxy</span>
+              <span className="cta-label">Book by August 21</span>
               <span className="cta-arrow">→</span>
             </a>
           </div>
