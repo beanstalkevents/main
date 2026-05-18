@@ -25,7 +25,7 @@ export default function BlogIndex() {
           <div className="inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1 mb-6" style={{ background: "#cdf765", color: "#233c36", letterSpacing: "0.14em" }}>
             Speaker Profiles
           </div>
-          <h1 className="mb-4" style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontSize: "clamp(40px, 6vw, 72px)", color: "#fcf9ec", lineHeight: 1.0 }}>
+          <h1 className="mb-4" style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, fontSize: "clamp(40px, 6vw, 72px)", color: "#fcf9ec", lineHeight: 1.0 }}>
             The Beanstalk Blog
           </h1>
           <p className="text-lg leading-relaxed" style={{ color: "#c7dccd", maxWidth: "500px" }}>
@@ -61,7 +61,7 @@ export default function BlogIndex() {
                     <span className="text-xs font-semibold" style={{ color: "#ba9e6e" }}>{post.author}</span>
                     <span className="text-xs" style={{ color: "#ba9e6e" }}>{post.date}</span>
                   </div>
-                  <h2 style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontSize: "18px", color: "#233c36", lineHeight: 1.2 }}>
+                  <h2 style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, fontSize: "18px", color: "#233c36", lineHeight: 1.2 }}>
                     {post.title}
                   </h2>
                   <p className="text-sm leading-relaxed flex-1" style={{ color: "#4a4a4a" }}>

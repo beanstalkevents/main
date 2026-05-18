@@ -127,7 +127,7 @@ export default function AttendeesCarousel() {
         <h2
           className="mb-4"
           style={{
-            fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
+            fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700,
             fontSize: "clamp(28px, 4vw, 44px)",
             color: "#fcf9ec",
           }}

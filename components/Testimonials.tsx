@@ -223,7 +223,7 @@ function CardEl({
       >
         <div
           style={{
-            fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
+            fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700,
             color: "#cdf765",
             fontSize: "16px",
             lineHeight: 1.2,
@@ -549,7 +549,7 @@ export default function Testimonials() {
         <div className="section-label">Social proof</div>
         <h2
           style={{
-            fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
+            fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700,
             fontSize: "clamp(28px, 4vw, 44px)",
             color: "#233c36",
             lineHeight: 1.1,

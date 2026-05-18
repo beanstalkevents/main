@@ -375,7 +375,7 @@ export default function IndustryCityPage() {
             { v: "6M sq ft", l: "Industrial floor space" },
           ].map((s, i) => (
             <div key={i} style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-              <strong style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontSize: "clamp(1.4rem, 2.6vw, 2rem)", color: "#fcf9ec", lineHeight: 1 }}>{s.v}</strong>
+              <strong style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, fontSize: "clamp(1.4rem, 2.6vw, 2rem)", color: "#fcf9ec", lineHeight: 1 }}>{s.v}</strong>
               <span style={{ ...EYEBROW, color: "#cdf765", opacity: 0.7 }}>{s.l}</span>
             </div>
           ))}
@@ -386,7 +386,7 @@ export default function IndustryCityPage() {
       <section style={{ background: "#cdf765" }}>
         <div className="max-w-content mx-auto px-6 md:px-12" style={{ padding: "4rem 2rem", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "1.5rem" }}>
           <span style={{ ...EYEBROW, color: "#233c36", opacity: 0.7 }}>RSVP</span>
-          <p style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", color: "#233c36", fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)", lineHeight: 1.15, maxWidth: "640px" }}>
+          <p style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, color: "#233c36", fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)", lineHeight: 1.15, maxWidth: "640px" }}>
             See you in Brooklyn &mdash; September 14&ndash;16, 2026.
           </p>
           <a

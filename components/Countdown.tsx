@@ -29,7 +29,7 @@ function Unit({ value, label }: { value: number; label: string }) {
     >
       <div
         style={{
-          fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
+          fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700,
           fontSize: "clamp(48px, 9vw, 120px)",
           lineHeight: 1,
           color: "#233c36",
@@ -70,7 +70,7 @@ export default function Countdown() {
         <h2
           className="mb-3"
           style={{
-            fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
+            fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700,
             fontSize: "clamp(28px, 4vw, 44px)",
             color: "#233c36",
           }}
