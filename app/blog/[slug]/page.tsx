@@ -54,7 +54,7 @@ export default function BlogPostPage({
           <div className="inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1 mb-6" style={{ background: "#cdf765", color: "#233c36", letterSpacing: "0.14em" }}>
             Speaker Profile
           </div>
-          <h1 className="mb-4" style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, fontSize: "clamp(32px, 5vw, 64px)", color: "#fcf9ec", lineHeight: 1.05, maxWidth: "800px" }}>
+          <h1 className="mb-4" style={{ fontFamily: "var(--font-serif), 'Iowan Old Style', Georgia, serif", fontWeight: 700, fontSize: "clamp(32px, 5vw, 64px)", color: "#fcf9ec", lineHeight: 1.05, maxWidth: "800px" }}>
             {post.title}
           </h1>
           <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-wider" style={{ color: "#c7dccd", letterSpacing: "0.1em" }}>
@@ -134,7 +134,7 @@ export default function BlogPostPage({
                     />
                   </div>
                   <div className="p-5 flex flex-col gap-2">
-                    <h3 style={{ fontFamily: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif", fontWeight: 700, fontSize: "15px", color: "#fcf9ec", lineHeight: 1.2 }}>
+                    <h3 style={{ fontFamily: "var(--font-serif), 'Iowan Old Style', Georgia, serif", fontWeight: 700, fontSize: "15px", color: "#fcf9ec", lineHeight: 1.2 }}>
                       {p.title}
                     </h3>
                     <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: "#cdf765", letterSpacing: "0.08em" }}>
