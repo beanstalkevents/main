@@ -91,7 +91,7 @@ const reasons = [
 export default function BestEcommerceConferencePage() {
   return (
     <div style={{ background: "var(--cream)" }}>
-      <SiteNav />
+      <SiteNav variant="solid" />
       <PartnerRibbon />
 
       {/* HERO */}

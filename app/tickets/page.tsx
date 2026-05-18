@@ -13,11 +13,9 @@ export const metadata: Metadata = {
 export default function TicketsPage() {
   return (
     <div style={{ background: "var(--cream)" }}>
-      <SiteNav />
+      <SiteNav variant="solid" />
       <PartnerRibbon />
-      <div style={{ paddingTop: "64px" }}>
-        <TicketsBody />
-      </div>
+      <TicketsBody />
       <Footer />
     </div>
   );

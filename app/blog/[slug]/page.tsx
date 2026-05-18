@@ -40,7 +40,7 @@ export default function BlogPostPage({
 
   return (
     <div style={{ background: "var(--cream)" }}>
-      <SiteNav />
+      <SiteNav variant="solid" />
       <PartnerRibbon />
 
       {/* HERO */}

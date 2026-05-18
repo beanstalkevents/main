@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function BlogIndex() {
   return (
     <div style={{ background: "var(--cream)" }}>
-      <SiteNav />
+      <SiteNav variant="solid" />
       <PartnerRibbon />
 
       {/* HERO */}

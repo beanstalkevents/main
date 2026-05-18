@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function StayPage() {
   return (
     <div style={{ background: "#0a0a0a", color: "#fcf9ec" }}>
-      <SiteNav />
+      <SiteNav variant="hero" />
       <PartnerRibbon />
       <StayBody />
       <Footer />
