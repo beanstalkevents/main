@@ -2,6 +2,11 @@
 
 import { useEffect, useRef } from "react";
 
+// Feature flag — flip to `true` to restore the Beekman card + intro + outro.
+// Currently false: Beekman block is under negotiation, only the Moxy section
+// is shown. Intro + outro are hidden too because they reference "two hotels".
+const SHOW_BEEKMAN = false;
+
 export default function StayBody() {
   const rootRef = useRef<HTMLDivElement | null>(null);
 
@@ -176,13 +181,15 @@ export default function StayBody() {
         <div className="video-scrim"></div>
       </div>
 
-      {/* Right-side pagination */}
-      <nav className="pagination" id="pagination">
-        <button className="pagination-dot" data-target="0" aria-label="Intro"></button>
-        <button className="pagination-dot" data-target="1" aria-label="The Beekman"></button>
-        <button className="pagination-dot" data-target="2" aria-label="Moxy NYC Downtown"></button>
-        <button className="pagination-dot" data-target="3" aria-label="Both options"></button>
-      </nav>
+      {/* Right-side pagination — hidden when only one hotel is shown */}
+      {SHOW_BEEKMAN && (
+        <nav className="pagination" id="pagination">
+          <button className="pagination-dot" data-target="0" aria-label="Intro"></button>
+          <button className="pagination-dot" data-target="1" aria-label="The Beekman"></button>
+          <button className="pagination-dot" data-target="2" aria-label="Moxy NYC Downtown"></button>
+          <button className="pagination-dot" data-target="3" aria-label="Both options"></button>
+        </nav>
+      )}
 
       {/* Bottom chrome */}
       <footer className="chrome-bottom">
@@ -190,12 +197,13 @@ export default function StayBody() {
           <span id="motion-label">Motion on</span>
         </button>
         <div className="chrome-eyebrow" id="active-name">
-          The Beekman
+          {SHOW_BEEKMAN ? "The Beekman" : "Moxy NYC Downtown"}
         </div>
       </footer>
 
       {/* Scroll sections */}
       <main>
+        {SHOW_BEEKMAN && (
         <section className="section" data-video="beekman" data-name="">
           <div className="section-inner intro-inner">
             <div className="intro-eyebrow">— Where to stay —</div>
@@ -211,7 +219,9 @@ export default function StayBody() {
             <div className="intro-scroll-cue">Scroll</div>
           </div>
         </section>
+        )}
 
+        {SHOW_BEEKMAN && (
         <section className="section" data-video="beekman" data-name="The Beekman">
           <div className="section-inner hotel-inner">
             <div className="hotel-num">— Option 01 —</div>
@@ -254,6 +264,7 @@ export default function StayBody() {
             </a>
           </div>
         </section>
+        )}
 
         <section className="section" data-video="moxy" data-name="Moxy NYC Downtown">
           <div className="section-inner hotel-inner">
@@ -317,6 +328,7 @@ export default function StayBody() {
           </div>
         </section>
 
+        {SHOW_BEEKMAN && (
         <section className="section" data-video="moxy" data-name="">
           <div className="section-inner outro-inner">
             <div className="intro-eyebrow">— One more thing —</div>
@@ -331,6 +343,7 @@ export default function StayBody() {
             </p>
           </div>
         </section>
+        )}
       </main>
     </div>
   );
